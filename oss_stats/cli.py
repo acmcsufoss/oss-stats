@@ -15,6 +15,7 @@ def cli(option):
         repositories = fetch_repositories()
         print(repositories)
         console.print(f"{len(repositories)} total repositories!")
+    # TODO: Implement functionality for other options
 
 
 if __name__ == "__main__":
