@@ -7,7 +7,7 @@ console = Console()
 
 @click.command()
 @click.option(
-    "--option", type=click.Choice(["issues", "PRs", "commits", "repositories"])
+    "--option", type=click.Choice(["issues", "prs", "commits", "repositories"])
 )
 def cli(option):
     """OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"""
@@ -15,7 +15,7 @@ def cli(option):
         repositories = fetch_repositories()
         print(repositories)
         console.print(f"{len(repositories)} total repositories!")
-    # TODO: Implement functionality for other options
+    # TODO: Implement functionality for other options (issues, prs, commits)
 
 
 if __name__ == "__main__":
