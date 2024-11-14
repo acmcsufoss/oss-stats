@@ -1,6 +1,6 @@
 import click
 from rich.console import Console
-from .github import fetch_repositories
+from .github import fetch_repositories, fetch_prs
 
 console = Console()
 
@@ -15,6 +15,10 @@ def cli(option):
         repositories = fetch_repositories()
         print(repositories)
         console.print(f"{len(repositories)} total repositories!")
+    if option == "prs":
+        prs = fetch_prs()
+        print(prs)
+        console.print(f"{len(prs)} total pull requests")
     # TODO: Implement functionality for other options (issues, prs, commits)
 
 
