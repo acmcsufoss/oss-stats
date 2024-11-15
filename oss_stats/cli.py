@@ -17,8 +17,7 @@ def cli(option):
         console.print(f"{len(repositories)} total repositories!")
     if option == "prs":
         prs = fetch_prs()
-        print(prs)
-        console.print(f"{len(prs)} total pull requests")
+        console.print(f"{prs} total pull requests")
     # TODO: Implement functionality for other options (issues, prs, commits)
 
 
