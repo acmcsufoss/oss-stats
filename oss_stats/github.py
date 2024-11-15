@@ -11,6 +11,17 @@ def fetch_repositories():
     repos = github.get_organization(org).get_repos()
     return [repo.name for repo in repos]
 
+def fetch_commits():
+    repos = github.get_organization(org).get_repos()
+    result = []
+    for repo in repos:
+        try:
+           commits = repo.get_commits().totalCount
+        except Exception as e:
+            commits = 0
+        result.append(commits)
+    return result
 
-# TODO: Create functions that fetch issues, PRs, commits, number of contributors,
+
+# TODO: Create functions that fetch issues, PRs, number of contributors,
 # and more from acmcsufoss org and EthanThatOneKid/acmcsuf.com using the PyGithub library.
