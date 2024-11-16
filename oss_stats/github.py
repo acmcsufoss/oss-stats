@@ -19,8 +19,5 @@ def fetch_prs():
     num_PRs = 0
     # Loops through each repo and counts PRs
     for repo in repos:
-        num_PRs += repo.get_pulls(state="open").totalCount
-        num_PRs += repo.get_pulls(state="closed").totalCount
-        
+        num_PRs += repo.get_pulls(state="all").totalCount
     return num_PRs
-
