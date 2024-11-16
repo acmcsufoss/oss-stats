@@ -25,3 +25,10 @@ def fetch_commits():
 
 # TODO: Create functions that fetch issues, PRs, number of contributors,
 # and more from acmcsufoss org and EthanThatOneKid/acmcsuf.com using the PyGithub library.
+def fetch_prs():
+    repos = github.get_organization(org).get_repos()
+    num_PRs = 0
+    # Loops through each repo and counts PRs
+    for repo in repos:
+        num_PRs += repo.get_pulls(state="all").totalCount
+    return num_PRs
