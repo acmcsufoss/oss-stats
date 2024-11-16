@@ -1,6 +1,6 @@
 import click
 from rich.console import Console
-from .github import fetch_repositories, fetch_prs
+from .github import fetch_repositories, fetch_prs, fetch_commits
 
 console = Console()
 
@@ -13,12 +13,14 @@ def cli(option):
     """OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"""
     if option == "repositories":
         repositories = fetch_repositories()
-        print(repositories)
         console.print(f"{len(repositories)} total repositories!")
     if option == "prs":
         prs = fetch_prs()
-        console.print(f"{prs} total pull requests")
-    # TODO: Implement functionality for other options (issues, prs, commits)
+        console.print(f"{prs} total pull requests!")
+    if option == "commits":
+        commits = fetch_commits()
+        console.print(f"{sum(commits)} total commits!")
+    # TODO: Implement functionality for remaining options (issues and contributors)
 
 
 if __name__ == "__main__":
