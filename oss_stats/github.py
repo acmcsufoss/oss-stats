@@ -11,12 +11,13 @@ def fetch_repositories():
     repos = github.get_organization(org).get_repos()
     return [repo.name for repo in repos]
 
+
 def fetch_commits():
     repos = github.get_organization(org).get_repos()
     result = []
     for repo in repos:
         try:
-           commits = repo.get_commits().totalCount
+            commits = repo.get_commits().totalCount
         except Exception as e:
             commits = 0
         result.append(commits)
