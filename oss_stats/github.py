@@ -6,7 +6,6 @@ github = Github(token)
 
 org = "acmcsufoss"
 
-
 def fetch_repositories():
     repos = github.get_organization(org).get_repos()
     return [repo.name for repo in repos]
@@ -24,8 +23,6 @@ def fetch_commits():
     return result
 
 
-# TODO: Create functions that fetch issues, PRs, number of contributors,
-# and more from acmcsufoss org and EthanThatOneKid/acmcsuf.com using the PyGithub library.
 def fetch_prs():
     repos = github.get_organization(org).get_repos()
     num_PRs = 0
@@ -33,3 +30,8 @@ def fetch_prs():
     for repo in repos:
         num_PRs += repo.get_pulls(state="all").totalCount
     return num_PRs
+
+
+def fetch_issues():
+    repos = github.get_organization(org).get_repos()
+    return [repo.get_issues(state="all").totalCount for repo in repos]
