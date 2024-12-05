@@ -1,6 +1,6 @@
 import click
 from rich.console import Console
-from .github import fetch_repositories, fetch_prs, fetch_commits
+from .github import fetch_repositories, fetch_prs, fetch_commits, fetch_issues
 
 console = Console()
 
@@ -20,7 +20,9 @@ def cli(option):
     if option == "commits":
         commits = fetch_commits()
         console.print(f"{sum(commits)} total commits!")
-    # TODO: Implement functionality for remaining options (issues and contributors)
+    if option == "issues":
+        issues = fetch_issues()
+        console.print(f"{sum(issues)} total issues")
 
 
 if __name__ == "__main__":
