@@ -1,6 +1,6 @@
 import click
 from rich.console import Console
-from .github import fetch_repositories, fetch_prs, fetch_commits, fetch_issues
+from .stats import fetch_repositories, fetch_prs, fetch_commits, fetch_issues
 
 console = Console()
 
