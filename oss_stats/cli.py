@@ -19,7 +19,7 @@ def cli(option):
         console.print(f"{prs} total pull requests!")
     if option == "commits":
         commits = fetch_commits()
-        console.print(f"{sum(commits)} total commits!")
+        console.print(f"{sum(commits.values())} total commits!")
     if option == "issues":
         issues = fetch_issues()
         console.print(f"{sum(issues)} total issues")
