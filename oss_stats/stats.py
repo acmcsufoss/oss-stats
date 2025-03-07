@@ -18,22 +18,22 @@ print(rate_limit.search.remaining, rate_limit.search.limit)
 
 org = "acmcsufoss"
 
-def fetch_repositories():
-    repos = gh.get_organization(org).get_repos()
-    return [repo.name for repo in repos]
-
 
 def fetch_commits():
     cache = load_cache()
     repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
     for repo in repos:
-        if repo.name in cache and "commits" in cache[repo.name] and cache[repo.name]["commits"] != 0:
+        if (
+            repo.name in cache
+            and "commits" in cache[repo.name]
+            and cache[repo.name]["commits"] != 0
+        ):
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["commits"]
             continue  # Skip API call
-        
-        create_entry(cache, repo.name) # Create NEW stats entry with this repo
+
+        create_entry(cache, repo.name)  # Create NEW stats entry with this repo
         try:
             commits = repo.get_commits().totalCount
         except Exception as _:
@@ -57,3 +57,11 @@ def fetch_prs():
 def fetch_issues():
     repos = gh.get_organization(org).get_repos()
     return [repo.get_issues(state="all").totalCount for repo in repos]
+
+
+def fetch_stars():
+    pass
+
+
+def fetch_contributors():
+    pass
