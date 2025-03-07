@@ -64,4 +64,22 @@ def fetch_stars():
 
 
 def fetch_contributors():
-    pass
+    cache = load_cache()
+    repos = gh.get_organization(org).get_repos(sort="updated")
+    result = {}
+    for repo in repos:
+        if (repo.name in cache and "contributors" in cache[repo.name]
+            and len(cache[repo.name]["contributors"]) > 0):
+            print(f"Using cached list for {repo.name}")
+            result[repo.name] = cache[repo.name]["contributors"]
+            continue  # Skip API call
+        create_entry(cache, repo.name)  # Create NEW stats entry with this repo
+        try:
+            contributors = repo.get_contributors()
+        except Exception as _:
+            contributors = []
+        cache[repo.name]["contributors"] = contributors
+        result[repo.name] = contributors
+        print(repo.name + " List of Contributors: " + str(cache[repo.name]["contributors"]))
+    save_cache(cache)
+    return result
