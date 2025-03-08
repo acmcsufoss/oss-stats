@@ -23,17 +23,18 @@ def fetch_commits():
     cache = load_cache()
     repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
+
     for repo in repos:
-        if (
-            repo.name in cache
-            and "commits" in cache[repo.name]
-            and cache[repo.name]["commits"] != 0
-        ):
+        # Create NEW stats entry with this repo
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+
+        # Use cached results if already computed
+        if cache[repo.name]["commits"] != -1:
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["commits"]
-            continue  # Skip API call
+            continue
 
-        create_entry(cache, repo.name)  # Create NEW stats entry with this repo
         try:
             commits = repo.get_commits().totalCount
         except Exception as _:
