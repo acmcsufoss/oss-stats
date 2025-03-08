@@ -5,7 +5,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 7
     },
     "lc-dailies": {
         "commits": 76,
@@ -13,7 +14,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 34
     },
     "fullyhacks": {
         "commits": 395,
@@ -21,7 +23,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 89
     },
     "acmcsuf.com-deno": {
         "commits": 6,
@@ -37,7 +40,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 3
     },
     "docs": {
         "commits": 81,
@@ -45,7 +49,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 1
     },
     "form": {
         "commits": 89,
@@ -53,7 +58,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 12
     },
     "1st": {
         "commits": 399,
@@ -61,7 +67,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 121
     },
     "tldr": {
         "commits": 22,
@@ -69,7 +76,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 8
     },
     "api.acmcsuf.com": {
         "commits": 84,
@@ -77,7 +85,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 12
     },
     "acm-server": {
         "commits": 587,
@@ -85,7 +94,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 26
     },
     "shorter": {
         "commits": 44,
@@ -93,7 +103,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 9
     },
     "svelte-workshop": {
         "commits": 17,
@@ -101,7 +112,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 2
     },
     "acmOpportunities": {
         "commits": 77,
@@ -109,7 +121,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 17
     },
     "dash.acmcsuf.com": {
         "commits": 0,
@@ -125,7 +138,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 1
     },
     "crying-counter": {
         "commits": 11,
@@ -133,7 +147,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 4
     },
     "acm-election": {
         "commits": 0,
@@ -149,7 +164,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "fullypack_sveltekit": {
         "commits": 14,
@@ -157,7 +173,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "fullypack_react_native": {
         "commits": 5,
@@ -165,7 +182,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "clubannounce": {
         "commits": 12,
@@ -173,7 +191,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 9
     },
     "acm-utterances": {
         "commits": 1,
@@ -181,7 +200,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "trends": {
         "commits": 4,
@@ -189,7 +209,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 1
     },
     "i": {
         "commits": 8,
@@ -197,7 +218,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 1
     },
     "qb64_windows": {
         "commits": 1,
@@ -205,7 +227,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "py-workshop": {
         "commits": 2,
@@ -213,7 +236,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "go-workshop": {
         "commits": 30,
@@ -221,7 +245,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "ts-workshop": {
         "commits": 2,
@@ -229,7 +254,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "js-workshop": {
         "commits": 11,
@@ -237,7 +263,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "sendlimiter": {
         "commits": 41,
@@ -245,7 +272,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 5
     },
     "fullypack_flask_vercel": {
         "commits": 21,
@@ -253,7 +281,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 2
     },
     "api-workshop": {
         "commits": 5,
@@ -261,7 +290,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 2
     },
     "acmJane": {
         "commits": 76,
@@ -269,7 +299,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "denokv-workshop": {
         "commits": 3,
@@ -277,7 +308,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "perks": {
         "commits": 5,
@@ -285,7 +317,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 4
     },
     "boardd": {
         "commits": 39,
@@ -293,7 +326,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 6
     },
     "archive": {
         "commits": 1,
@@ -301,7 +335,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     ".github": {
         "commits": 2,
@@ -309,7 +344,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "triggers-nix": {
         "commits": 0,
@@ -317,7 +353,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "fullypack_data_science": {
         "commits": 8,
@@ -325,7 +362,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "fullypack_discord_python": {
         "commits": 7,
@@ -333,7 +371,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "prisma-crud-examples": {
         "commits": 12,
@@ -341,7 +380,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 2
     },
     "fullypack_html_css": {
         "commits": 5,
@@ -349,7 +389,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 5
     },
     "fullypack_fastify_solid": {
         "commits": 5,
@@ -365,7 +406,8 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 0
     },
     "triggers": {
         "commits": 250,
@@ -373,6 +415,7 @@
         "pull_requests": -1,
         "contributors": [],
         "star_count": -1,
-        "last_updated": ""
+        "last_updated": "",
+        "prs": 18
     }
 }
