@@ -76,10 +76,13 @@ def fetch_contributors():
         create_entry(cache, repo.name)  # Create NEW stats entry with this repo
         try:
             contributors = repo.get_contributors()
+            contributors_res = []
+            for contributor in contributors:
+                contributors_res.append(f"{contributor.name} ({contributor.login})")
         except Exception as _:
-            contributors = []
-        cache[repo.name]["contributors"] = contributors
-        result[repo.name] = contributors
+            contributors_res = []
+        cache[repo.name]["contributors"] = contributors_res
+        result[repo.name] = contributors_res
         print(repo.name + " List of Contributors: " + str(cache[repo.name]["contributors"]))
     save_cache(cache)
     return result
