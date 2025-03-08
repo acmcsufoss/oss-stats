@@ -1,115 +1,129 @@
 {
     "fullyhacks": {
-        "commits": 395,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "acmcsuf.com-deno": {
-        "commits": 6,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "gallery": {
-        "commits": 12,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "docs": {
-        "commits": 81,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "form": {
-        "commits": 89,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "1st": {
-        "commits": 399,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "lc-dailies": {
-        "commits": 75,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "tldr": {
-        "commits": 22,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "api.acmcsuf.com": {
-        "commits": 84,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "acm-server": {
-        "commits": 587,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "oss-stats": {
-        "commits": 20,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "shorter": {
-        "commits": 44,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "svelte-workshop": {
-        "commits": 17,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "acmOpportunities": {
-        "commits": 77,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "dash.acmcsuf.com": {
         "commits": 0,
@@ -117,23 +131,26 @@
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "ai-hello-world": {
-        "commits": 11,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "crying-counter": {
-        "commits": 11,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "acm-election": {
         "commits": 0,
@@ -141,175 +158,197 @@
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "fullypack_fastapi": {
-        "commits": 2,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "fullypack_sveltekit": {
-        "commits": 14,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "fullypack_react_native": {
-        "commits": 5,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "clubannounce": {
-        "commits": 12,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "acm-utterances": {
-        "commits": 1,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "trends": {
-        "commits": 4,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "i": {
-        "commits": 8,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "qb64_windows": {
-        "commits": 1,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "py-workshop": {
-        "commits": 2,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "go-workshop": {
-        "commits": 30,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "ts-workshop": {
-        "commits": 2,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "js-workshop": {
-        "commits": 11,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "sendlimiter": {
-        "commits": 41,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "fullypack_flask_vercel": {
-        "commits": 21,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "api-workshop": {
-        "commits": 5,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "acmJane": {
-        "commits": 76,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "denokv-workshop": {
-        "commits": 3,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "perks": {
-        "commits": 5,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "boardd": {
-        "commits": 39,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "archive": {
-        "commits": 1,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     ".github": {
-        "commits": 2,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "triggers-nix": {
         "commits": 0,
@@ -317,62 +356,70 @@
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "fullypack_data_science": {
-        "commits": 8,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "fullypack_discord_python": {
-        "commits": 7,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "prisma-crud-examples": {
-        "commits": 12,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "fullypack_html_css": {
-        "commits": 5,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "fullypack_fastify_solid": {
-        "commits": 5,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "qg": {
-        "commits": 47,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     },
     "triggers": {
-        "commits": 250,
+        "commits": 0,
         "issues": 0,
         "pull_requests": 0,
         "contributors": [],
         "star_count": 0,
-        "last_updated": ""
+        "last_updated": "",
+        "stars": 0
     }
 }
