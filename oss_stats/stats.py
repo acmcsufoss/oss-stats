@@ -51,26 +51,23 @@ def fetch_prs():
     repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
 
-    # Loops through each repo and counts PRs
     for repo in repos:
         if repo.name not in cache:
-            create_entry(cache,repo.name)
-        
-        if "prs" not in cache[repo.name]:
-            cache[repo.name]["prs"] = -1
+            create_entry(cache,repo.name)       
 
-        if cache[repo.name]["prs"] != -1:
+        if cache[repo.name]["pull_requests"] != -1:
             print(f"Using cached count for {repo.name}")
-            result[repo.name] = cache[repo.name]["prs"]
+            result[repo.name] = cache[repo.name]["pull_requests"]
             continue
-        num_PRs = 0
+
         try:
-            num_PRs = repo.get_pulls(state="all").totalCount
+            pull_requests = repo.get_pulls(state="all").totalCount
         except Exception as _:
-            num_PRs = 0
-        cache[repo.name]["prs"] = num_PRs
-        result[repo.name] = num_PRs
-        print(repo.name + " Number of pull requests: " + str(cache[repo.name]["prs"]))
+            pull_requests = 0
+
+        cache[repo.name]["pull_requests"] = pull_requests
+        result[repo.name] = pull_requests
+        print(repo.name + " Number of Pull Requests: " + str(cache[repo.name]["pull_requests"]))
     save_cache(cache)
     return result
 
