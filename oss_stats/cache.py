@@ -18,10 +18,10 @@ def save_cache(cache):
 
 def create_entry(stats, repo_name: str):
     stats[repo_name] = {
-        "commits": 0,
-        "issues": 0,
-        "pull_requests": 0,
+        "commits": -1,
+        "issues": -1,
+        "pull_requests": -1,
         "contributors": [],
-        "star_count": 0,
+        "star_count": -1,
         "last_updated": "",
     }

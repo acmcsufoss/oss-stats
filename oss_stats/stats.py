@@ -23,17 +23,18 @@ def fetch_commits():
     cache = load_cache()
     repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
+
     for repo in repos:
-        if (
-            repo.name in cache
-            and "commits" in cache[repo.name]
-            and cache[repo.name]["commits"] != 0
-        ):
+        # Create NEW stats entry with this repo
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+
+        # Use cached results if already computed
+        if cache[repo.name]["commits"] != -1:
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["commits"]
-            continue  # Skip API call
+            continue
 
-        create_entry(cache, repo.name)  # Create NEW stats entry with this repo
         try:
             commits = repo.get_commits().totalCount
         except Exception as _:
@@ -46,12 +47,33 @@ def fetch_commits():
 
 
 def fetch_prs():
-    repos = gh.get_organization(org).get_repos()
-    num_PRs = 0
-    # Loops through each repo and counts PRs
+    cache = load_cache()
+    repos = gh.get_organization(org).get_repos(sort="updated")
+    result = {}
+
     for repo in repos:
-        num_PRs += repo.get_pulls(state="all").totalCount
-    return num_PRs
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+
+        if cache[repo.name]["pull_requests"] != -1:
+            print(f"Using cached count for {repo.name}")
+            result[repo.name] = cache[repo.name]["pull_requests"]
+            continue
+
+        try:
+            pull_requests = repo.get_pulls(state="all").totalCount
+        except Exception as _:
+            pull_requests = 0
+
+        cache[repo.name]["pull_requests"] = pull_requests
+        result[repo.name] = pull_requests
+        print(
+            repo.name
+            + " Number of Pull Requests: "
+            + str(cache[repo.name]["pull_requests"])
+        )
+    save_cache(cache)
+    return result
 
 
 def fetch_issues():
@@ -86,4 +108,28 @@ def fetch_stars():
 
 
 def fetch_contributors():
-    pass
+    cache = load_cache()
+    repos = gh.get_organization(org).get_repos(sort="updated")
+    result = {}
+    for repo in repos:
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+
+        if len(cache[repo.name]["contributors"]) > 0:
+            print(f"Using cached list for {repo.name}")
+            result[repo.name] = cache[repo.name]["contributors"]
+            continue  # Skip API call
+
+        try:
+            contributors = repo.get_contributors()
+            contributors_res = []
+            for contributor in contributors:
+                contributors_res.append(f"{contributor.name} ({contributor.login})")
+        except Exception as _:
+            contributors_res = []
+
+        cache[repo.name]["contributors"] = contributors_res
+        result[repo.name] = contributors_res
+        print(f"{repo.name} List of Contributors: {cache[repo.name]['contributors']}")
+    save_cache(cache)
+    return result
