@@ -53,7 +53,7 @@ def fetch_prs():
 
     for repo in repos:
         if repo.name not in cache:
-            create_entry(cache,repo.name)       
+            create_entry(cache, repo.name)
 
         if cache[repo.name]["pull_requests"] != -1:
             print(f"Using cached count for {repo.name}")
@@ -67,7 +67,11 @@ def fetch_prs():
 
         cache[repo.name]["pull_requests"] = pull_requests
         result[repo.name] = pull_requests
-        print(repo.name + " Number of Pull Requests: " + str(cache[repo.name]["pull_requests"]))
+        print(
+            repo.name
+            + " Number of Pull Requests: "
+            + str(cache[repo.name]["pull_requests"])
+        )
     save_cache(cache)
     return result
 
