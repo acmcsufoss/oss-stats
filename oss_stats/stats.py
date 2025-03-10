@@ -86,23 +86,22 @@ def fetch_stars():
     repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
     for repo in repos:
-        if (
-            repo.name in cache
-            and "stars" in cache[repo.name]
-            and cache[repo.name]["stars"] != 0
-        ):
+        if repo.name not in cache:
+          create_entry(cache, repo.name)
+
+        if cache[repo.name]["stars"] != -1:
             print(f"Using cached count for {repo.name}")
-            result[repo.name] = cache[repo.name]["start"]
+            result[repo.name] = cache[repo.name]["stars"]
             continue
 
-        create_entry(cache, repo.name)
         try:
             stars = repo.get_starred().totalCount
         except Exception as _:
             stars = 0
+
         cache[repo.name]["stars"] = stars
         result[repo.name] = stars
-        print(repo.name + " Number of commits: " + str(cache[repo.name]["stars"]))
+        print(repo.name + " Number of Stars: " + str(cache[repo.name]["stars"]))
     save_cache(cache)
     return result
 
