@@ -47,12 +47,29 @@ def fetch_commits():
 
 
 def fetch_prs():
-    repos = gh.get_organization(org).get_repos()
-    num_PRs = 0
-    # Loops through each repo and counts PRs
+    cache = load_cache()
+    repos = gh.get_organization(org).get_repos(sort="updated")
+    result = {}
+
     for repo in repos:
-        num_PRs += repo.get_pulls(state="all").totalCount
-    return num_PRs
+        if repo.name not in cache:
+            create_entry(cache,repo.name)       
+
+        if cache[repo.name]["pull_requests"] != -1:
+            print(f"Using cached count for {repo.name}")
+            result[repo.name] = cache[repo.name]["pull_requests"]
+            continue
+
+        try:
+            pull_requests = repo.get_pulls(state="all").totalCount
+        except Exception as _:
+            pull_requests = 0
+
+        cache[repo.name]["pull_requests"] = pull_requests
+        result[repo.name] = pull_requests
+        print(repo.name + " Number of Pull Requests: " + str(cache[repo.name]["pull_requests"]))
+    save_cache(cache)
+    return result
 
 
 def fetch_issues():
