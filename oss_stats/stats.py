@@ -69,12 +69,14 @@ def fetch_contributors():
     repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
     for repo in repos:
-        if (repo.name in cache and "contributors" in cache[repo.name]
-            and len(cache[repo.name]["contributors"]) > 0):
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+
+        if len(cache[repo.name]["contributors"]) > 0:
             print(f"Using cached list for {repo.name}")
             result[repo.name] = cache[repo.name]["contributors"]
             continue  # Skip API call
-        create_entry(cache, repo.name)  # Create NEW stats entry with this repo
+
         try:
             contributors = repo.get_contributors()
             contributors_res = []
@@ -82,8 +84,9 @@ def fetch_contributors():
                 contributors_res.append(f"{contributor.name} ({contributor.login})")
         except Exception as _:
             contributors_res = []
+
         cache[repo.name]["contributors"] = contributors_res
         result[repo.name] = contributors_res
-        print(repo.name + " List of Contributors: " + str(cache[repo.name]["contributors"]))
+        print(f"{repo.name} List of Contributors: {cache[repo.name]['contributors']}")
     save_cache(cache)
     return result
