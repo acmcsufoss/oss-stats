@@ -1,35 +1,25 @@
 {
     "oss-stats": {
-        "commits": 24,
-        "issues": -1,
+        "commits": 35,
+        "issues": 11,
         "pull_requests": 8,
+        "star_count": 5,
         "contributors": [
             "Tomas Oh (tomasohCHOM)",
+            "None (QuentinRivest)",
             "Edward Cortes (eccortes4)",
             "Owen Sterling (JOwen-ster)",
             "Timothy (timothyouu)",
             "Evan Jimenez (EvanCPSC)",
-            "None (QuentinRivest)"
+            "Kevin Geier-Conney (Kevin-dgc)"
         ],
-        "star_count": -1,
-        "last_updated": ""
-    },
-    "lc-dailies": {
-        "commits": 76,
-        "issues": -1,
-        "pull_requests": 34,
-        "contributors": [
-            "Ethan Davidson (EthanThatOneKid)",
-            "Karnikaa Velumani (karnikaavelumani)",
-            "Tomas Oh (tomasohCHOM)"
-        ],
-        "star_count": -1,
         "last_updated": ""
     },
     "fullyhacks": {
-        "commits": 395,
-        "issues": -1,
+        "commits": 396,
+        "issues": 38,
         "pull_requests": 89,
+        "star_count": 9,
         "contributors": [
             "Daniel Truong (anhduy1202)",
             "Tomas Oh (tomasohCHOM)",
@@ -47,59 +37,76 @@
             "Vanessa Isabel Roque (vroque19)",
             "spicycurrey (spicy)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
-    "acmcsuf.com-deno": {
-        "commits": 6,
-        "issues": -1,
-        "pull_requests": -1,
-        "contributors": [],
-        "star_count": -1,
+    "api.acmcsuf.com": {
+        "commits": 89,
+        "issues": 10,
+        "pull_requests": 13,
+        "star_count": 5,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)",
+            "Josh Holman (TheJolman)",
+            "Siddharth Vasu (sidvasu)",
+            "Akanksh Jagadish (akanksh5)"
+        ],
+        "last_updated": ""
+    },
+    "lc-dailies": {
+        "commits": 76,
+        "issues": 32,
+        "pull_requests": 34,
+        "star_count": 3,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)",
+            "Karnikaa Velumani (karnikaavelumani)",
+            "Tomas Oh (tomasohCHOM)"
+        ],
         "last_updated": ""
     },
     "gallery": {
         "commits": 12,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 3,
+        "star_count": 2,
         "contributors": [
             "Tyler Lui (tylermlui)",
             "Adrian Vazquez (adriancancode)",
             "Nestor Reategui (nestor-remo)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "docs": {
         "commits": 81,
-        "issues": -1,
+        "issues": 1,
         "pull_requests": 1,
+        "star_count": 3,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
             "Tomas Oh (tomasohCHOM)",
             "Evan Jimenez (EvanCPSC)",
             "Karnikaa Velumani (karnikaavelumani)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "form": {
         "commits": 89,
-        "issues": -1,
+        "issues": 11,
         "pull_requests": 12,
+        "star_count": 6,
         "contributors": [
             "Alexander Peras (AlexthePear)",
             "Ethan Davidson (EthanThatOneKid)",
             "Keillor Jennings (keillor)",
             "Sama Ahmed (26samaahmed)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "1st": {
         "commits": 399,
-        "issues": -1,
+        "issues": 9,
         "pull_requests": 121,
+        "star_count": 2,
         "contributors": [
             "Tomas Oh (tomasohCHOM)",
             "Ethan Davidson (EthanThatOneKid)",
@@ -175,37 +182,24 @@
             "Patrick Hung (TheFishEy)",
             "None (ttuyen22)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "tldr": {
         "commits": 22,
-        "issues": -1,
+        "issues": 8,
         "pull_requests": 8,
+        "star_count": 8,
         "contributors": [
             "Joel (jjoeldaniel)",
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
-        "last_updated": ""
-    },
-    "api.acmcsuf.com": {
-        "commits": 84,
-        "issues": -1,
-        "pull_requests": 13,
-        "contributors": [
-            "Ethan Davidson (EthanThatOneKid)",
-            "Josh Holman (TheJolman)",
-            "Siddharth Vasu (sidvasu)",
-            "Akanksh Jagadish (akanksh5)"
-        ],
-        "star_count": -1,
         "last_updated": ""
     },
     "acm-server": {
         "commits": 587,
-        "issues": -1,
+        "issues": 15,
         "pull_requests": 26,
+        "star_count": 6,
         "contributors": [
             "Diamond (diamondburned)",
             "Ethan Davidson (EthanThatOneKid)",
@@ -213,380 +207,379 @@
             "Amy (amyipdev)",
             "Aaron Lieberman (AaronLieb)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "shorter": {
         "commits": 44,
-        "issues": -1,
+        "issues": 11,
         "pull_requests": 9,
+        "star_count": 2,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
             "Karnikaa Velumani (karnikaavelumani)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "svelte-workshop": {
         "commits": 17,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 2,
+        "star_count": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
             "Karnikaa Velumani (karnikaavelumani)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "acmOpportunities": {
         "commits": 77,
-        "issues": -1,
+        "issues": 19,
         "pull_requests": 17,
+        "star_count": 7,
         "contributors": [
             "Boushra Bettir  (boushrabettir)",
             "Ethan Davidson (EthanThatOneKid)",
             "Tomas Oh (tomasohCHOM)",
             "Verinx (Katie419)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "dash.acmcsuf.com": {
         "commits": 0,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 0,
         "contributors": [],
-        "star_count": -1,
         "last_updated": ""
     },
     "ai-hello-world": {
         "commits": 11,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 1,
+        "star_count": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
             "Karnikaa Velumani (karnikaavelumani)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "crying-counter": {
         "commits": 11,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 4,
+        "star_count": 1,
         "contributors": [
             "Karnikaa Velumani (karnikaavelumani)",
             "Justin Lee (JustinPLee)",
             "None (EBYEMJC1)",
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "acm-election": {
         "commits": 0,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 0,
         "contributors": [],
-        "star_count": -1,
         "last_updated": ""
     },
     "fullypack_fastapi": {
         "commits": 2,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 2,
         "contributors": [
             "Charlie Taylor (charliettaylor)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "fullypack_sveltekit": {
         "commits": 14,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 2,
         "contributors": [
             "Diamond (diamondburned)",
             "Angel Santoyo (anguzz)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "fullypack_react_native": {
         "commits": 5,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 2,
         "contributors": [
             "Daniel Truong (anhduy1202)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "clubannounce": {
         "commits": 12,
-        "issues": -1,
+        "issues": 4,
         "pull_requests": 9,
+        "star_count": 2,
         "contributors": [
             "Tomas Oh (tomasohCHOM)",
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "acm-utterances": {
         "commits": 1,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "trends": {
         "commits": 4,
-        "issues": -1,
+        "issues": 2,
         "pull_requests": 1,
+        "star_count": 3,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "i": {
         "commits": 8,
-        "issues": -1,
+        "issues": 38,
         "pull_requests": 1,
+        "star_count": 1,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "qb64_windows": {
         "commits": 1,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "py-workshop": {
         "commits": 2,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "go-workshop": {
         "commits": 30,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 0,
         "contributors": [
             "Diamond (diamondburned)",
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "ts-workshop": {
         "commits": 2,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 1,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "js-workshop": {
         "commits": 11,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "sendlimiter": {
         "commits": 41,
-        "issues": -1,
+        "issues": 3,
         "pull_requests": 5,
+        "star_count": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
             "Karnikaa Velumani (karnikaavelumani)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "fullypack_flask_vercel": {
         "commits": 21,
-        "issues": -1,
+        "issues": 1,
         "pull_requests": 2,
+        "star_count": 2,
         "contributors": [
             "Joel (jjoeldaniel)",
             "Daniel Truong (anhduy1202)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "api-workshop": {
         "commits": 5,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 2,
+        "star_count": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "acmJane": {
         "commits": 76,
-        "issues": -1,
+        "issues": 2,
         "pull_requests": 0,
+        "star_count": 2,
         "contributors": [
             "Joel (jjoeldaniel)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "denokv-workshop": {
         "commits": 3,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "perks": {
         "commits": 5,
-        "issues": -1,
+        "issues": 3,
         "pull_requests": 4,
+        "star_count": 2,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "boardd": {
         "commits": 39,
-        "issues": -1,
+        "issues": 6,
         "pull_requests": 6,
+        "star_count": 1,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "archive": {
         "commits": 1,
-        "issues": -1,
+        "issues": 1,
         "pull_requests": 0,
+        "star_count": 1,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     ".github": {
         "commits": 2,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 1,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "triggers-nix": {
         "commits": 0,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 2,
         "contributors": [],
-        "star_count": -1,
         "last_updated": ""
     },
     "fullypack_data_science": {
         "commits": 8,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 1,
         "contributors": [
             "Daniel Truong (anhduy1202)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "fullypack_discord_python": {
         "commits": 7,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 1,
         "contributors": [
             "Joel (jjoeldaniel)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "prisma-crud-examples": {
         "commits": 12,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 2,
+        "star_count": 1,
         "contributors": [
             "Oscar Cisneros (oscisn93)",
             "None (dependabot[bot])",
             "jason w (jaasonw)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "fullypack_html_css": {
         "commits": 5,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 5,
+        "star_count": 1,
         "contributors": [
             "Daniel Truong (anhduy1202)",
             "Diamond (diamondburned)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "fullypack_fastify_solid": {
         "commits": 5,
-        "issues": -1,
+        "issues": 0,
         "pull_requests": 0,
+        "star_count": 1,
         "contributors": [
             "Oscar Cisneros (oscisn93)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "qg": {
         "commits": 47,
-        "issues": -1,
+        "issues": 1,
         "pull_requests": 0,
+        "star_count": 6,
         "contributors": [
             "Diamond (diamondburned)",
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     },
     "triggers": {
         "commits": 250,
-        "issues": -1,
+        "issues": 7,
         "pull_requests": 18,
+        "star_count": 3,
         "contributors": [
             "Joel (jjoeldaniel)",
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "star_count": -1,
         "last_updated": ""
     }
 }

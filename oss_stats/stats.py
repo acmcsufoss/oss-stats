@@ -17,11 +17,11 @@ print(rate_limit.core.remaining, rate_limit.core.limit)
 print(rate_limit.search.remaining, rate_limit.search.limit)
 
 org = "acmcsufoss"
+repos = gh.get_organization(org).get_repos(sort="updated")
 
 
 def fetch_commits():
     cache = load_cache()
-    repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
 
     for repo in repos:
@@ -36,48 +36,18 @@ def fetch_commits():
             continue
 
         try:
-            commits = repo.get_commits().totalCount
+            commit_count = repo.get_commits().totalCount
         except Exception as _:
-            commits = 0
-        cache[repo.name]["commits"] = commits
-        result[repo.name] = commits
+            commit_count = 0
+        cache[repo.name]["commits"] = commit_count 
+        result[repo.name] = commit_count 
         print(repo.name + " Number of commits: " + str(cache[repo.name]["commits"]))
     save_cache(cache)
     return result
 
 
-def fetch_prs():
-    cache = load_cache()
-    repos = gh.get_organization(org).get_repos(sort="updated")
-    result = {}
-
-    for repo in repos:
-        if repo.name not in cache:
-            create_entry(cache, repo.name)
-
-        if cache[repo.name]["pull_requests"] != -1:
-            print(f"Using cached count for {repo.name}")
-            result[repo.name] = cache[repo.name]["pull_requests"]
-            continue
-
-        try:
-            pull_requests = repo.get_pulls(state="all").totalCount
-        except Exception as _:
-            pull_requests = 0
-
-        cache[repo.name]["pull_requests"] = pull_requests
-        result[repo.name] = pull_requests
-        print(
-            repo.name
-            + " Number of Pull Requests: "
-            + str(cache[repo.name]["pull_requests"])
-        )
-    save_cache(cache)
-    return result
-
 def fetch_issues():
     cache = load_cache()
-    repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
 
     for repo in repos:
@@ -90,46 +60,79 @@ def fetch_issues():
             continue
 
         try:
-            issues = repo.get_issues(state="all").totalCount
+            issues = repo.get_issues(state="all")
+            # Pull Requests are also considered Issues, but we don't count them
+            issue_count = sum(1 for issue in issues if not issue.pull_request)
         except Exception as _:
-            issues = 0
+            issue_count = 0
 
-        cache[repo.name]["issues"] = issues
-        result[repo.name] = issues
+        cache[repo.name]["issues"] = issue_count
+        result[repo.name] = issue_count
         print(repo.name + " Number of Issues: " + str(cache[repo.name]["issues"]))
         
     save_cache(cache)
     return result
 
+
+
+def fetch_prs():
+    cache = load_cache()
+    result = {}
+
+    for repo in repos:
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+
+        if cache[repo.name]["pull_requests"] != -1:
+            print(f"Using cached count for {repo.name}")
+            result[repo.name] = cache[repo.name]["pull_requests"]
+            continue
+
+        try:
+            pull_request_count = repo.get_pulls(state="all").totalCount
+        except Exception as _:
+            pull_request_count = 0
+
+        cache[repo.name]["pull_requests"] = pull_request_count
+        result[repo.name] = pull_request_count
+        print(
+            repo.name
+            + " Number of Pull Requests: "
+            + str(cache[repo.name]["pull_requests"])
+        )
+    save_cache(cache)
+    return result
+
+
 def fetch_stars():
     cache = load_cache()
-    repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
+
     for repo in repos:
         if repo.name not in cache:
           create_entry(cache, repo.name)
 
-        if cache[repo.name]["stars"] != -1:
+        if cache[repo.name]["star_count"] != -1:
             print(f"Using cached count for {repo.name}")
-            result[repo.name] = cache[repo.name]["stars"]
+            result[repo.name] = cache[repo.name]["start_count"]
             continue
 
         try:
-            stars = repo.get_starred().totalCount
+            star_count = repo.get_stargazers().totalCount
         except Exception as _:
-            stars = 0
+            star_count = 0
 
-        cache[repo.name]["stars"] = stars
-        result[repo.name] = stars
-        print(repo.name + " Number of Stars: " + str(cache[repo.name]["stars"]))
+        cache[repo.name]["star_count"] = star_count
+        result[repo.name] = star_count
+        print(repo.name + " Number of Stars: " + str(cache[repo.name]["star_count"]))
     save_cache(cache)
     return result
 
 
 def fetch_contributors():
     cache = load_cache()
-    repos = gh.get_organization(org).get_repos(sort="updated")
     result = {}
+
     for repo in repos:
         if repo.name not in cache:
             create_entry(cache, repo.name)
@@ -137,7 +140,7 @@ def fetch_contributors():
         if len(cache[repo.name]["contributors"]) > 0:
             print(f"Using cached list for {repo.name}")
             result[repo.name] = cache[repo.name]["contributors"]
-            continue  # Skip API call
+            continue
 
         try:
             contributors = repo.get_contributors()
@@ -152,3 +155,4 @@ def fetch_contributors():
         print(f"{repo.name} List of Contributors: {cache[repo.name]['contributors']}")
     save_cache(cache)
     return result
+
