@@ -1,13 +1,20 @@
 import click
 from rich.console import Console
-from .stats import fetch_commits, fetch_issues, fetch_prs, fetch_stars, fetch_contributors
+from .stats import (
+    fetch_commits,
+    fetch_issues,
+    fetch_prs,
+    fetch_stars,
+    fetch_contributors,
+)
 
 console = Console()
 
 
 @click.command()
 @click.option(
-    "--option", type=click.Choice(["commits", "issues", "pull_requests", "stars", "contributors"])
+    "--option",
+    type=click.Choice(["commits", "issues", "pull_requests", "stars", "contributors"]),
 )
 def cli(option):
     """OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"""

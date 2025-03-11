@@ -39,8 +39,8 @@ def fetch_commits():
             commit_count = repo.get_commits().totalCount
         except Exception as _:
             commit_count = 0
-        cache[repo.name]["commits"] = commit_count 
-        result[repo.name] = commit_count 
+        cache[repo.name]["commits"] = commit_count
+        result[repo.name] = commit_count
         print(repo.name + " Number of commits: " + str(cache[repo.name]["commits"]))
     save_cache(cache)
     return result
@@ -69,10 +69,9 @@ def fetch_issues():
         cache[repo.name]["issues"] = issue_count
         result[repo.name] = issue_count
         print(repo.name + " Number of Issues: " + str(cache[repo.name]["issues"]))
-        
+
     save_cache(cache)
     return result
-
 
 
 def fetch_prs():
@@ -110,7 +109,7 @@ def fetch_stars():
 
     for repo in repos:
         if repo.name not in cache:
-          create_entry(cache, repo.name)
+            create_entry(cache, repo.name)
 
         if cache[repo.name]["star_count"] != -1:
             print(f"Using cached count for {repo.name}")
@@ -155,4 +154,3 @@ def fetch_contributors():
         print(f"{repo.name} List of Contributors: {cache[repo.name]['contributors']}")
     save_cache(cache)
     return result
-
