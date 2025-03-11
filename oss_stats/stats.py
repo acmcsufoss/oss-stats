@@ -75,11 +75,31 @@ def fetch_prs():
     save_cache(cache)
     return result
 
-
 def fetch_issues():
-    repos = gh.get_organization(org).get_repos()
-    return [repo.get_issues(state="all").totalCount for repo in repos]
+    cache = load_cache()
+    repos = gh.get_organization(org).get_repos(sort="updated")
+    result = {}
 
+    for repo in repos:
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+
+        if cache[repo.name]["issues"] != -1:
+            print(f"Using cached count for {repo.name}")
+            result[repo.name] = cache[repo.name]["issues"]
+            continue
+
+        try:
+            issues = repo.get_issues(state="all").totalCount
+        except Exception as _:
+            issues = 0
+
+        cache[repo.name]["issues"] = issues
+        result[repo.name] = issues
+        print(repo.name + " Number of Issues: " + str(cache[repo.name]["issues"]))
+        
+    save_cache(cache)
+    return result
 
 def fetch_stars():
     cache = load_cache()
