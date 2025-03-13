@@ -2,22 +2,6 @@
 
 `oss_stats` is a Python CLI tool that fetches statistics from the [acmcsufoss](https://github.com/acmcsufoss) GitHub organization and the [acmcsuf.com](https://github.com/EthanThatOneKid/acmcsuf.com) repository, including issues, pull requests, commits, and total number of contributors. It provides an interactive command-line interface with colored outputs to make exploring GitHub data simple and engaging.
 
-## Installation
-
-To install `oss_stats` locally:
-
-```bash
-pip install .
-```
-
-Alternatively, if you’re actively developing:
-
-```bash
-pip install -e .
-```
-
-> **Note:** The `-e` flag installs the project in **editable mode** so that any changes you make reflect immediately without reinstallation.
-
 ## Prerequisites
 
 To access GitHub statistics, you’ll need a **GitHub personal access token**.
@@ -60,6 +44,22 @@ To access GitHub statistics, you’ll need a **GitHub personal access token**.
    GITHUB_TOKEN="your_github_token_here"
    ```
 ---
+
+## Installation
+
+To install `oss_stats` locally:
+
+```bash
+pip install .
+```
+
+Alternatively, if you’re actively developing:
+
+```bash
+pip install -e .
+```
+
+> **Note:** The `-e` flag installs the project in **editable mode** so that any changes you make reflect immediately without reinstallation.
 
 ## Usage
 
