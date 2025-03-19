@@ -22,6 +22,6 @@ def create_entry(stats, repo_name: str):
         "issues": -1,
         "pull_requests": -1,
         "star_count": -1,
-        "contributors": [],
+        "contributors": None,
         "last_updated": "",
     }
