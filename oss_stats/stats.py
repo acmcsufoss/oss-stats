@@ -56,8 +56,7 @@ def fetch_commits():
         try:
             commit_count = repo.get_commits().totalCount
         except Exception as _:
-            commit_count = 0
-        insert_latest_update(repo, cache)
+            commit_count = -1
         cache[repo.name]["commits"] = commit_count
         result[repo.name] = commit_count
         print(repo.name + " Number of commits: " + str(cache[repo.name]["commits"]))
@@ -82,7 +81,7 @@ def fetch_issues():
             # Pull Requests are also considered Issues, but we don't count them
             issue_count = sum(1 for issue in issues if not issue.pull_request)
         except Exception as _:
-            issue_count = 0
+            issue_count = -1
 
         insert_latest_update(repo, cache)
         cache[repo.name]["issues"] = issue_count
@@ -108,7 +107,7 @@ def fetch_prs():
         try:
             pull_request_count = repo.get_pulls(state="all").totalCount
         except Exception as _:
-            pull_request_count = 0
+            pull_request_count = -1
 
         insert_latest_update(repo, cache)
         cache[repo.name]["pull_requests"] = pull_request_count
@@ -137,7 +136,7 @@ def fetch_stars():
         try:
             star_count = repo.get_stargazers().totalCount
         except Exception as _:
-            star_count = 0
+            star_count = -1
 
         insert_latest_update(repo, cache)
         cache[repo.name]["star_count"] = star_count
@@ -155,7 +154,7 @@ def fetch_contributors():
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        if len(cache[repo.name]["contributors"]) > 0 and check_latest_update(repo):
+        if cache[repo.name]["contributors"] is not None and check_latest_update(repo):
             print(f"Using cached list for {repo.name}")
             result[repo.name] = cache[repo.name]["contributors"]
             continue
@@ -166,7 +165,7 @@ def fetch_contributors():
             for contributor in contributors:
                 contributors_res.append(f"{contributor.name} ({contributor.login})")
         except Exception as _:
-            contributors_res = []
+            contributors_res = None
 
         insert_latest_update(repo, cache)
         cache[repo.name]["contributors"] = contributors_res
