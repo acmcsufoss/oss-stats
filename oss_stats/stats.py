@@ -1,6 +1,7 @@
 import os
 from github import Github
 from dotenv import load_dotenv
+from datetime import datetime, timedelta
 
 from .cache import create_entry, load_cache, save_cache
 
@@ -20,9 +21,49 @@ org = "acmcsufoss"
 repos = gh.get_organization(org).get_repos(sort="updated")
 
 
+def check_update(repo, cache):
+    import datetime as dt
+    six_months_ago = datetime.now(dt.timezone.utc) - timedelta(days=182)
+    # Gets time 6 months ago
+    
+    last_time_str = cache[repo.name]["last_updated"]
+    # gets last updated time
+
+    if last_time_str is None:
+        # checks if last_time is null
+        return True
+
+    try:
+        # converts str time to datetime
+        last_time = datetime.fromisoformat(last_time_str)
+        return last_time < six_months_ago
+    except ValueError:
+        # Error so recompute anyway
+        return True
+
+
+def fetch_updates():
+    cache = load_cache()
+    result = {}
+
+    for repo in repos:
+        # Create new stats entry with this repo
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+        try:
+            # gets date from github
+            date = repo.updated_at.isoformat()
+        except Exception as _:
+            date = datetime.now()
+        cache[repo.name]["last_updated"] = date
+        print(repo.name + " Last Updated: " + str(cache[repo.name]["last_updated"]))
+    save_cache(cache)
+
+
 def fetch_commits():
     cache = load_cache()
     result = {}
+    canUseCache = False
 
     for repo in repos:
         # Create NEW stats entry with this repo
@@ -30,7 +71,10 @@ def fetch_commits():
             create_entry(cache, repo.name)
 
         # Use cached results if already computed
-        if cache[repo.name]["commits"] != -1:
+        if canUseCache == False:
+            canUseCache = check_update(repo, cache)
+        
+        if cache[repo.name]["commits"] != -1 and canUseCache:
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["commits"]
             continue
@@ -49,12 +93,15 @@ def fetch_commits():
 def fetch_issues():
     cache = load_cache()
     result = {}
-
+    canUseCache = False
     for repo in repos:
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        if cache[repo.name]["issues"] != -1:
+        if canUseCache == False:
+            canUseCache = check_update(repo, cache)
+
+        if cache[repo.name]["issues"] != -1 and canUseCache:
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["issues"]
             continue
@@ -77,12 +124,15 @@ def fetch_issues():
 def fetch_prs():
     cache = load_cache()
     result = {}
-
+    canUseCache = False
     for repo in repos:
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        if cache[repo.name]["pull_requests"] != -1:
+        if canUseCache == False:
+            canUseCache = check_update(repo, cache)
+
+        if cache[repo.name]["pull_requests"] != -1 and canUseCache:
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["pull_requests"]
             continue
@@ -106,12 +156,15 @@ def fetch_prs():
 def fetch_stars():
     cache = load_cache()
     result = {}
-
+    canUseCache = False
     for repo in repos:
         if repo.name not in cache:
             create_entry(cache, repo.name)
+            
+        if canUseCache == False:
+            canUseCache = check_update(repo, cache)
 
-        if cache[repo.name]["star_count"] != -1:
+        if cache[repo.name]["star_count"] != -1 and canUseCache:
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["start_count"]
             continue
@@ -131,12 +184,16 @@ def fetch_stars():
 def fetch_contributors():
     cache = load_cache()
     result = {}
+    canUseCache = False
 
     for repo in repos:
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        if len(cache[repo.name]["contributors"]) > 0:
+        if canUseCache == False:
+            canUseCache = check_update(repo, cache)
+
+        if len(cache[repo.name]["contributors"]) > 0 and canUseCache:
             print(f"Using cached list for {repo.name}")
             result[repo.name] = cache[repo.name]["contributors"]
             continue
