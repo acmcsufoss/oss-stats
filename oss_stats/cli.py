@@ -6,6 +6,7 @@ from .stats import (
     fetch_prs,
     fetch_stars,
     fetch_contributors,
+    fetch_latest_updates,
 )
 
 console = Console()
@@ -14,7 +15,9 @@ console = Console()
 @click.command()
 @click.option(
     "--option",
-    type=click.Choice(["commits", "issues", "pull_requests", "stars", "contributors"]),
+    type=click.Choice(
+        ["commits", "issues", "pull_requests", "stars", "contributors", "updates"]
+    ),
 )
 def cli(option):
     """OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"""
@@ -27,6 +30,8 @@ def cli(option):
     if option == "pull_requests":
         prs = fetch_prs()
         console.print(f"{sum(prs.values())} total pull requests!")
+    if option == "updates":
+        fetch_latest_updates()
     if option == "stars":
         stars = fetch_stars()
         console.print(f"{sum(stars.values())} total stargazers!")

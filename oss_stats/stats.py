@@ -1,6 +1,7 @@
 import os
 from github import Github
 from dotenv import load_dotenv
+from datetime import datetime, timedelta, timezone
 
 from .cache import create_entry, load_cache, save_cache
 
@@ -19,6 +20,23 @@ print(rate_limit.search.remaining, rate_limit.search.limit)
 org = "acmcsufoss"
 repos = gh.get_organization(org).get_repos(sort="updated")
 
+six_months_ago = datetime.now(timezone.utc) - timedelta(days=182)
+
+
+def check_latest_update(repo):
+    try:
+        last_time = repo.updated_at
+        return last_time < six_months_ago
+    except ValueError:
+        return False  # Force Update if parsing fails
+
+
+def insert_latest_update(repo, cache):
+    try:
+        cache[repo.name]["last_updated"] = repo.updated_at.isoformat()
+    except Exception as _:
+        pass
+
 
 def fetch_commits():
     cache = load_cache()
@@ -29,8 +47,8 @@ def fetch_commits():
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        # Use cached results if already computed
-        if cache[repo.name]["commits"] != -1:
+        # Use cached results if already computed and results are from 6+ months
+        if cache[repo.name]["commits"] != -1 and check_latest_update(repo):
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["commits"]
             continue
@@ -49,12 +67,11 @@ def fetch_commits():
 def fetch_issues():
     cache = load_cache()
     result = {}
-
     for repo in repos:
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        if cache[repo.name]["issues"] != -1:
+        if cache[repo.name]["issues"] != -1 and check_latest_update(repo):
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["issues"]
             continue
@@ -66,6 +83,7 @@ def fetch_issues():
         except Exception as _:
             issue_count = -1
 
+        insert_latest_update(repo, cache)
         cache[repo.name]["issues"] = issue_count
         result[repo.name] = issue_count
         print(repo.name + " Number of Issues: " + str(cache[repo.name]["issues"]))
@@ -77,12 +95,11 @@ def fetch_issues():
 def fetch_prs():
     cache = load_cache()
     result = {}
-
     for repo in repos:
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        if cache[repo.name]["pull_requests"] != -1:
+        if cache[repo.name]["pull_requests"] != -1 and check_latest_update(repo):
             print(f"Using cached count for {repo.name}")
             result[repo.name] = cache[repo.name]["pull_requests"]
             continue
@@ -92,6 +109,7 @@ def fetch_prs():
         except Exception as _:
             pull_request_count = -1
 
+        insert_latest_update(repo, cache)
         cache[repo.name]["pull_requests"] = pull_request_count
         result[repo.name] = pull_request_count
         print(
@@ -106,14 +124,13 @@ def fetch_prs():
 def fetch_stars():
     cache = load_cache()
     result = {}
-
     for repo in repos:
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        if cache[repo.name]["star_count"] != -1:
+        if cache[repo.name]["star_count"] != -1 and check_latest_update(repo):
             print(f"Using cached count for {repo.name}")
-            result[repo.name] = cache[repo.name]["start_count"]
+            result[repo.name] = cache[repo.name]["star_count"]
             continue
 
         try:
@@ -121,6 +138,7 @@ def fetch_stars():
         except Exception as _:
             star_count = -1
 
+        insert_latest_update(repo, cache)
         cache[repo.name]["star_count"] = star_count
         result[repo.name] = star_count
         print(repo.name + " Number of Stars: " + str(cache[repo.name]["star_count"]))
@@ -136,7 +154,7 @@ def fetch_contributors():
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        if cache[repo.name]["contributors"] is not None:
+        if cache[repo.name]["contributors"] is not None and check_latest_update(repo):
             print(f"Using cached list for {repo.name}")
             result[repo.name] = cache[repo.name]["contributors"]
             continue
@@ -149,8 +167,25 @@ def fetch_contributors():
         except Exception as _:
             contributors_res = None
 
+        insert_latest_update(repo, cache)
         cache[repo.name]["contributors"] = contributors_res
         result[repo.name] = contributors_res
         print(f"{repo.name} List of Contributors: {cache[repo.name]['contributors']}")
     save_cache(cache)
     return result
+
+
+def fetch_latest_updates():
+    cache = load_cache()
+    for repo in repos:
+        # Create new stats entry with this repo
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+        try:
+            # gets date from github
+            date = repo.updated_at.isoformat()
+        except Exception as _:
+            date = ""
+        cache[repo.name]["last_updated"] = date
+        print(repo.name + " Last Updated: " + str(cache[repo.name]["last_updated"]))
+    save_cache(cache)
