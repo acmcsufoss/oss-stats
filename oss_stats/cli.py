@@ -21,6 +21,19 @@ console = Console()
 )
 def cli(option):
     """OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"""
+
+    print("""
+                                     __              
+                                     / _|             
+  __ _  ___ _ __ ___   ___ ___ _   _| |_ ___  ___ ___ 
+ / _` |/ __| '_ ` _ \\ / __/ __| | | |  _/ _ \\/ __/ __|
+| (_| | (__| | | | | | (__\\__ \\ |_| | || (_) \\__ \\__ \\
+ \\__,_|\\___|_| |_| |_|\\___|___/\\__,_|_| \\___/|___/___/
+
+
+    """
+    )
+
     if option == "commits":
         commits = fetch_commits()
         console.print(f"{sum(commits.values())} total commits!")
