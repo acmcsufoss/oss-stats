@@ -9,6 +9,16 @@ from .stats import (
     fetch_latest_updates,
 )
 
+LOGO = """
+                                      __              
+                                     / _|             
+  __ _  ___ _ __ ___   ___ ___ _   _| |_ ___  ___ ___ 
+ / _` |/ __| '_ ` _ \\ / __/ __| | | |  _/ _ \\/ __/ __|
+| (_| | (__| | | | | | (__\\__ \\ |_| | || (_) \\__ \\__ \\
+ \\__,_|\\___|_| |_| |_|\\___|___/\\__,_|_| \\___/|___/___/
+
+"""
+
 console = Console()
 
 
@@ -22,17 +32,7 @@ console = Console()
 def cli(option):
     """OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"""
 
-    print("""
-                                     __              
-                                     / _|             
-  __ _  ___ _ __ ___   ___ ___ _   _| |_ ___  ___ ___ 
- / _` |/ __| '_ ` _ \\ / __/ __| | | |  _/ _ \\/ __/ __|
-| (_| | (__| | | | | | (__\\__ \\ |_| | || (_) \\__ \\__ \\
- \\__,_|\\___|_| |_| |_|\\___|___/\\__,_|_| \\___/|___/___/
-
-
-    """
-    )
+    console.print(LOGO, style="#11D4B1", highlight=False)
 
     if option == "commits":
         commits = fetch_commits()
