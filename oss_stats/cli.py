@@ -26,7 +26,15 @@ console = Console()
 @click.option(
     "--option",
     type=click.Choice(
-        ["commits", "issues", "pull_requests", "stars", "contributors", "updates"]
+        [
+            "commits",
+            "issues",
+            "pull_requests",
+            "stars",
+            "contributors",
+            "updates",
+            "all",
+        ]
     ),
 )
 def cli(option):
@@ -34,21 +42,21 @@ def cli(option):
 
     console.print(LOGO, style="#11D4B1", highlight=False)
 
-    if option == "commits":
+    if option == "commits" or option == "all":
         commits = fetch_commits()
         console.print(f"{sum(commits.values())} total commits!")
-    if option == "issues":
+    if option == "issues" or option == "all":
         issues = fetch_issues()
         console.print(f"{sum(issues.values())} total issues")
-    if option == "pull_requests":
+    if option == "pull_requests" or option == "all":
         prs = fetch_prs()
         console.print(f"{sum(prs.values())} total pull requests!")
-    if option == "updates":
+    if option == "updates" or option == "all":
         fetch_latest_updates()
-    if option == "stars":
+    if option == "stars" or option == "all":
         stars = fetch_stars()
         console.print(f"{sum(stars.values())} total stargazers!")
-    if option == "contributors":
+    if option == "contributors" or option == "all":
         contributors = fetch_contributors()
         contributors_set = set()
         for repo_contributors in contributors.values():

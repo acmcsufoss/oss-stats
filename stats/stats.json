@@ -1,6 +1,6 @@
 {
     "oss-stats": {
-        "commits": 40,
+        "commits": 43,
         "issues": 13,
         "pull_requests": 9,
         "star_count": 5,
@@ -10,10 +10,10 @@
             "Edward Cortes (eccortes4)",
             "Owen Sterling (JOwen-ster)",
             "Timothy (timothyouu)",
-            "Evan Jimenez (EvanCPSC)",
-            "Kevin Geier-Conney (Kevin-dgc)"
+            "Kevin Geier-Conney (Kevin-dgc)",
+            "Evan Jimenez (EvanCPSC)"
         ],
-        "last_updated": "2025-03-20T22:35:39+00:00"
+        "last_updated": "2025-03-22T03:13:47+00:00"
     },
     "fullyhacks": {
         "commits": 402,
@@ -66,16 +66,17 @@
         "last_updated": "2025-03-06T22:33:18+00:00"
     },
     "gallery": {
-        "commits": 16,
+        "commits": 20,
         "issues": 0,
-        "pull_requests": 5,
+        "pull_requests": 6,
         "star_count": 2,
         "contributors": [
             "Tyler Lui (tylermlui)",
             "Nestor Reategui (nestor-remo)",
-            "Adrian Vazquez (adriancancode)"
+            "Adrian Vazquez (adriancancode)",
+            "Emily Tsai (emilyytsai)"
         ],
-        "last_updated": "2025-03-20T22:15:39+00:00"
+        "last_updated": "2025-03-21T00:03:19+00:00"
     },
     "docs": {
         "commits": 82,
