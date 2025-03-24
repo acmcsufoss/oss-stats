@@ -37,22 +37,24 @@ def insert_latest_update(repo, cache):
     except Exception as _:
         pass
 
+
 def get_commits(repo):
-    commit_count = repo.get_commits().totalCount
-    return commit_count
+    return repo.get_commits().totalCount
+
 
 def get_issues(repo):
     issues = repo.get_issues(state="all")
     issue_count = sum(1 for issue in issues if not issue.pull_request)
     return issue_count
 
+
 def get_prs(repo):
-    pull_request_count = repo.get_pulls(state="all").totalCount
-    return pull_request_count
+    return repo.get_pulls(state="all").totalCount
+
 
 def get_stars(repo):
-    star_count = repo.get_stargazers().totalCount
-    return star_count
+    return repo.get_stargazers().totalCount
+
 
 def get_contributors(repo):
     contributors = repo.get_contributors()
@@ -61,9 +63,6 @@ def get_contributors(repo):
         contributors_res.append(f"{contributor.name} ({contributor.login})")
     return contributors_res
 
-def get_latest_updates(repo):
-    date = repo.updated_at.isoformat()
-    return date
 
 get_funcs = {
     "commits": get_commits,
@@ -71,8 +70,8 @@ get_funcs = {
     "pull_requests": get_prs,
     "stars": get_stars,
     "contributors": get_contributors,
-    "updates": get_latest_updates
 }
+
 
 def fetch_resource(option: str, default_value):
     cache = load_cache()
@@ -105,23 +104,36 @@ def fetch_resource(option: str, default_value):
 
 
 def fetch_commits():
-    return fetch_resource("commits", -1)
+    return fetch_resource(option="commits", default_value=-1)
 
 
 def fetch_issues():
-    return fetch_resource("issues", -1)
+    return fetch_resource(option="issues", default_value=-1)
 
 
 def fetch_prs():
-    return fetch_resource("pull_requests", -1)
+    return fetch_resource(option="pull_requests", default_value=-1)
 
 
 def fetch_stars():
-    return fetch_resource("stars", -1)
+    return fetch_resource(option="stars", default_value=-1)
+
 
 def fetch_contributors():
-    return fetch_resource("contributors", None)
+    return fetch_resource(option="contributors", default_value=None)
 
 
 def fetch_latest_updates():
-    return fetch_resource("updates", "")
+    cache = load_cache()
+    for repo in repos:
+        # Create new stats entry with this repo
+        if repo.name not in cache:
+            create_entry(cache, repo.name)
+        try:
+            # gets date from github
+            date = repo.updated_at.isoformat()
+        except Exception as _:
+            date = ""
+        cache[repo.name]["last_updated"] = date
+        print(repo.name + " Last Updated: " + str(cache[repo.name]["last_updated"]))
+    save_cache(cache)
