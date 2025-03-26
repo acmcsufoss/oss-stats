@@ -7,6 +7,7 @@
 To access GitHub statistics, you’ll need a **GitHub personal access token**.
 
 ### **How to Get a GitHub Token**
+
 1. Go to [GitHub Settings](https://github.com/settings/tokens).
 2. Click **"Generate new token"**.
 3. Under **"Select scopes"**, enable the following:
@@ -21,12 +22,14 @@ To access GitHub statistics, you’ll need a **GitHub personal access token**.
 ## Setting up the Development Environment
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/acmcsufoss/oss_stats.git
    cd oss_stats
    ```
 
 2. **Create a virtual environment (recommended):**
+
    ```bash
    python -m venv venv
    source venv/bin/activate  # On macOS/Linux
@@ -34,15 +37,19 @@ To access GitHub statistics, you’ll need a **GitHub personal access token**.
    ```
 
 3. **Install the required dependencies:**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Set up your GitHub token:**
+
    - Create a `.env` file in the project root with the following content:
+
    ```bash
    GITHUB_TOKEN="your_github_token_here"
    ```
+
 ---
 
 ## Installation

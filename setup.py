@@ -6,7 +6,7 @@ setup(
     description="A Python CLI tool to fetch GitHub stats from acmcsufoss",
     url="https://github.com/acmcsufoss/oss-stats",
     packages=find_packages(),
-    install_requires=["click", "PyGithub", "python-dotenv", "rich"],
+    install_requires=["click", "PyGithub", "python-dotenv", "questionary", "rich"],
     entry_points={
         "console_scripts": ["oss_stats=oss_stats.cli:cli"],
     },
