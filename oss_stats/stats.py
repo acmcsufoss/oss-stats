@@ -1,7 +1,10 @@
 import os
-from github import Github
+from typing import List
+from github import Github, GithubException
 from dotenv import load_dotenv
 from datetime import datetime, timedelta, timezone
+
+from github.Repository import Repository
 
 from .cache import create_entry, load_cache, save_cache
 
@@ -12,14 +15,9 @@ if not token:
     raise Exception("No token present!")
 
 gh = Github(token)
-
-rate_limit = gh.get_rate_limit()
-print(rate_limit.core.remaining, rate_limit.core.limit)
-print(rate_limit.search.remaining, rate_limit.search.limit)
-
 org = "acmcsufoss"
-repos = gh.get_organization(org).get_repos(sort="updated")
 
+repos = gh.get_organization(org).get_repos(sort="updated")
 six_months_ago = datetime.now(timezone.utc) - timedelta(days=182)
 
 
@@ -28,7 +26,7 @@ def check_latest_update(repo):
         last_time = repo.updated_at
         return last_time < six_months_ago
     except ValueError:
-        return False  # Force Update if parsing fails
+        return False
 
 
 def insert_latest_update(repo, cache):
@@ -38,42 +36,50 @@ def insert_latest_update(repo, cache):
         pass
 
 
-def get_commits(repo):
+def get_commits(repo: Repository) -> int:
+    """Returns the total number of commits in the repository."""
     return repo.get_commits().totalCount
 
 
-def get_issues(repo):
-    issues = repo.get_issues(state="all")
-    issue_count = sum(1 for issue in issues if not issue.pull_request)
-    return issue_count
+def get_issues(repo: Repository) -> int:
+    """Returns the number of issues (excluding pull requests) in the repository."""
+    return sum(1 for issue in repo.get_issues(state="all") if not issue.pull_request)
 
 
-def get_prs(repo):
+def get_prs(repo: Repository) -> int:
+    """Returns the total number of pull requests in the repository."""
     return repo.get_pulls(state="all").totalCount
 
 
-def get_stars(repo):
+def get_stars(repo: Repository) -> int:
+    """Returns the number of stargazers (stars) for the repository."""
     return repo.get_stargazers().totalCount
 
 
-def get_contributors(repo):
-    contributors = repo.get_contributors()
-    contributors_res = []
-    for contributor in contributors:
-        contributors_res.append(f"{contributor.name} ({contributor.login})")
-    return contributors_res
+def get_contributors(repo: Repository) -> List[str]:
+    """Returns a list of contributor names and usernames in the format 'Name (username)'."""
+    return [
+        f"{contributor.name} ({contributor.login})"
+        for contributor in repo.get_contributors()
+    ]
 
 
-get_funcs = {
-    "commits": get_commits,
-    "issues": get_issues,
-    "pull_requests": get_prs,
-    "stars": get_stars,
-    "contributors": get_contributors,
+resource_config = {
+    "commits": {"default": -1, "getter": get_commits},
+    "issues": {"default": -1, "getter": get_issues},
+    "pull_requests": {"default": -1, "getter": get_prs},
+    "stars": {"default": -1, "getter": get_stars},
+    "contributors": {"default": None, "getter": get_contributors},
 }
 
 
-def fetch_resource(option: str, default_value):
+def fetch_resource(option: str):
+    config = resource_config.get(option)
+    if not config:
+        raise ValueError(f"Unknown resource option: {option}")
+
+    default_value = config["default"]
+    fetch_func = config["getter"]
     cache = load_cache()
     result = {}
 
@@ -89,8 +95,9 @@ def fetch_resource(option: str, default_value):
             continue
 
         try:
-            resource_value = get_funcs[option](repo)
-        except Exception as _:
+            resource_value = fetch_func(repo)
+        except GithubException as e:
+            print(e)
             resource_value = default_value
 
         if option != "updates":
@@ -103,24 +110,11 @@ def fetch_resource(option: str, default_value):
     return result
 
 
-def fetch_commits():
-    return fetch_resource(option="commits", default_value=-1)
-
-
-def fetch_issues():
-    return fetch_resource(option="issues", default_value=-1)
-
-
-def fetch_prs():
-    return fetch_resource(option="pull_requests", default_value=-1)
-
-
-def fetch_stars():
-    return fetch_resource(option="stars", default_value=-1)
-
-
-def fetch_contributors():
-    return fetch_resource(option="contributors", default_value=None)
+fetch_commits = lambda: fetch_resource("commits")
+fetch_issues = lambda: fetch_resource("issues")
+fetch_prs = lambda: fetch_resource("pull_requests")
+fetch_stars = lambda: fetch_resource("stars")
+fetch_contributors = lambda: fetch_resource("contributors")
 
 
 def fetch_latest_updates():
