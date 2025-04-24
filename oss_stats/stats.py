@@ -6,6 +6,14 @@ from datetime import datetime, timedelta, timezone
 
 from github.Repository import Repository
 
+from .const import (
+    COMMITS_KEY,
+    CONTRIBUTORS_KEY,
+    ISSUES_KEY,
+    LAST_UPDATED_KEY,
+    PULL_REQUESTS_KEY,
+    STARS_KEY,
+)
 from .cache import create_entry, load_cache, save_cache
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
@@ -37,46 +45,52 @@ def insert_latest_update(repo, cache):
 
 
 def get_commits(repo: Repository) -> int:
-    """Returns the total number of commits in the repository."""
+    """Returns the total number of commits in the repository"""
     return repo.get_commits().totalCount
 
 
 def get_issues(repo: Repository) -> int:
-    """Returns the number of issues (excluding pull requests) in the repository."""
+    """Returns the number of issues (excluding pull requests) in the repository"""
     return sum(1 for issue in repo.get_issues(state="all") if not issue.pull_request)
 
 
 def get_prs(repo: Repository) -> int:
-    """Returns the total number of pull requests in the repository."""
+    """Returns the total number of pull requests in the repository"""
     return repo.get_pulls(state="all").totalCount
 
 
 def get_stars(repo: Repository) -> int:
-    """Returns the number of stargazers (stars) for the repository."""
+    """Returns the number of stargazers (stars) for the repository"""
     return repo.get_stargazers().totalCount
 
 
 def get_contributors(repo: Repository) -> List[str]:
-    """Returns a list of contributor names and usernames in the format 'Name (username)'."""
+    """Returns a list of contributor names and usernames in the format 'Name (username)'"""
     return [
         f"{contributor.name} ({contributor.login})"
         for contributor in repo.get_contributors()
     ]
 
 
-resource_config = {
-    "commits": {"default": -1, "getter": get_commits},
-    "issues": {"default": -1, "getter": get_issues},
-    "pull_requests": {"default": -1, "getter": get_prs},
-    "stars": {"default": -1, "getter": get_stars},
-    "contributors": {"default": None, "getter": get_contributors},
+def get_latest_update(repo: Repository) -> str:
+    """Returns when the repository was last updated in ISO format"""
+    return repo.updated_at.isoformat()
+
+
+RESOURCE_CONFIG = {
+    COMMITS_KEY: {"default": -1, "getter": get_commits},
+    ISSUES_KEY: {"default": -1, "getter": get_issues},
+    PULL_REQUESTS_KEY: {"default": -1, "getter": get_prs},
+    STARS_KEY: {"default": -1, "getter": get_stars},
+    CONTRIBUTORS_KEY: {"default": None, "getter": get_contributors},
+    LAST_UPDATED_KEY: {"default": "", "getter": get_latest_update},
 }
 
 
-def fetch_resource(option: str):
-    config = resource_config.get(option)
+def fetch_res(res: str):
+    config = RESOURCE_CONFIG.get(res)
     if not config:
-        raise ValueError(f"Unknown resource option: {option}")
+        raise ValueError(f"Unknown res option: {res}")
 
     default_value = config["default"]
     fetch_func = config["getter"]
@@ -84,50 +98,36 @@ def fetch_resource(option: str):
     result = {}
 
     for repo in repos:
-        # Create NEW stats entry with this repo
         if repo.name not in cache:
             create_entry(cache, repo.name)
 
-        # Use cached results if already computed and results are from 6+ months
-        if cache[repo.name][option] != default_value and check_latest_update(repo):
-            print(f"Using cached count for {repo.name}")
-            result[repo.name] = cache[repo.name][option]
-            continue
+        is_stale_check_required = res != LAST_UPDATED_KEY
+        if is_stale_check_required:
+            # Use cached results if already computed and results are from 6+ months
+            if cache[repo.name][res] != default_value and check_latest_update(repo):
+                print(f"Using cached count for {repo.name}")
+                result[repo.name] = cache[repo.name][res]
+                continue
 
         try:
-            resource_value = fetch_func(repo)
+            res_value = fetch_func(repo)
         except GithubException as e:
             print(e)
-            resource_value = default_value
+            res_value = default_value
 
-        if option != "updates":
+        if res != LAST_UPDATED_KEY:
             insert_latest_update(repo, cache)
 
-        cache[repo.name][option] = resource_value
-        result[repo.name] = resource_value
-        print(f"{option} Count for {repo.name} = {cache[repo.name][option]}")
+        cache[repo.name][res] = res_value
+        result[repo.name] = res_value
+        print(f"{res} for {repo.name}: {res_value}")
     save_cache(cache)
     return result
 
 
-fetch_commits = lambda: fetch_resource("commits")
-fetch_issues = lambda: fetch_resource("issues")
-fetch_prs = lambda: fetch_resource("pull_requests")
-fetch_stars = lambda: fetch_resource("stars")
-fetch_contributors = lambda: fetch_resource("contributors")
-
-
-def fetch_latest_updates():
-    cache = load_cache()
-    for repo in repos:
-        # Create new stats entry with this repo
-        if repo.name not in cache:
-            create_entry(cache, repo.name)
-        try:
-            # gets date from github
-            date = repo.updated_at.isoformat()
-        except Exception as _:
-            date = ""
-        cache[repo.name]["last_updated"] = date
-        print(repo.name + " Last Updated: " + str(cache[repo.name]["last_updated"]))
-    save_cache(cache)
+fetch_commits = lambda: fetch_res(COMMITS_KEY)
+fetch_issues = lambda: fetch_res(ISSUES_KEY)
+fetch_prs = lambda: fetch_res(PULL_REQUESTS_KEY)
+fetch_stars = lambda: fetch_res(STARS_KEY)
+fetch_contributors = lambda: fetch_res(CONTRIBUTORS_KEY)
+fetch_latest_updates = lambda: fetch_res(LAST_UPDATED_KEY)

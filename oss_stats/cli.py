@@ -1,5 +1,14 @@
 import click
 from rich.console import Console
+from .const import (
+    ALL_KEY,
+    COMMITS_KEY,
+    CONTRIBUTORS_KEY,
+    ISSUES_KEY,
+    LAST_UPDATED_KEY,
+    PULL_REQUESTS_KEY,
+    STARS_KEY,
+)
 from .stats import (
     fetch_commits,
     fetch_issues,
@@ -22,25 +31,25 @@ LOGO = """
 console = Console()
 
 STAT_HANDLERS = {
-    "commits": {
+    COMMITS_KEY: {
         "fetch": fetch_commits,
         "handle": lambda data: console.print(f"{sum(data.values())} total commits!"),
     },
-    "issues": {
+    ISSUES_KEY: {
         "fetch": fetch_issues,
         "handle": lambda data: console.print(f"{sum(data.values())} total issues"),
     },
-    "pull_requests": {
+    PULL_REQUESTS_KEY: {
         "fetch": fetch_prs,
         "handle": lambda data: console.print(
             f"{sum(data.values())} total pull requests!"
         ),
     },
-    "stars": {
+    STARS_KEY: {
         "fetch": fetch_stars,
         "handle": lambda data: console.print(f"{sum(data.values())} total stargazers!"),
     },
-    "contributors": {
+    CONTRIBUTORS_KEY: {
         "fetch": fetch_contributors,
         "handle": lambda data: (
             console.print(
@@ -51,7 +60,7 @@ STAT_HANDLERS = {
             ),
         ),
     },
-    "updates": {
+    LAST_UPDATED_KEY: {
         "fetch": fetch_latest_updates,
         "handle": lambda _: None,
     },
@@ -64,13 +73,13 @@ STAT_HANDLERS = {
     "-r",
     type=click.Choice(
         [
-            "commits",
-            "issues",
-            "pull_requests",
-            "stars",
-            "contributors",
-            "updates",
-            "all",
+            COMMITS_KEY,
+            ISSUES_KEY,
+            PULL_REQUESTS_KEY,
+            STARS_KEY,
+            CONTRIBUTORS_KEY,
+            LAST_UPDATED_KEY,
+            ALL_KEY,
         ]
     ),
     multiple=True,

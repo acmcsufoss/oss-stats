@@ -1,5 +1,14 @@
 import json
 
+from .const import (
+    COMMITS_KEY,
+    CONTRIBUTORS_KEY,
+    ISSUES_KEY,
+    LAST_UPDATED_KEY,
+    PULL_REQUESTS_KEY,
+    STARS_KEY,
+)
+
 CACHE_FILE = "stats/stats.json"
 
 
@@ -18,10 +27,10 @@ def save_cache(cache):
 
 def create_entry(stats, repo_name: str):
     stats[repo_name] = {
-        "commits": -1,
-        "issues": -1,
-        "pull_requests": -1,
-        "stars": -1,
-        "contributors": None,
-        "last_updated": "",
+        COMMITS_KEY: -1,
+        ISSUES_KEY: -1,
+        PULL_REQUESTS_KEY: -1,
+        STARS_KEY: -1,
+        CONTRIBUTORS_KEY: None,
+        LAST_UPDATED_KEY: "",
     }

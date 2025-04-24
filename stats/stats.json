@@ -1,6 +1,6 @@
 {
-    "oss-stats": {
-        "commits": 45,
+    "oss_stats": {
+        "commits": 49,
         "issues": 13,
         "pull_requests": 10,
         "stars": 5,
@@ -13,12 +13,12 @@
             "Kevin Geier-Conney (Kevin-dgc)",
             "Evan Jimenez (EvanCPSC)"
         ],
-        "last_updated": "2025-03-24T17:48:53+00:00"
+        "last_updated": "2025-04-24T20:50:08+00:00"
     },
     "api.acmcsuf.com": {
         "commits": 191,
         "issues": 22,
-        "pull_requests": 32,
+        "pull_requests": 33,
         "stars": 7,
         "contributors": [
             "Josh Holman (TheJolman)",
@@ -589,21 +589,5 @@
             "Ethan Davidson (EthanThatOneKid)"
         ],
         "last_updated": "2023-02-22T09:54:38+00:00"
-    },
-    "oss_stats": {
-        "commits": 48,
-        "issues": 13,
-        "pull_requests": 10,
-        "stars": 5,
-        "contributors": [
-            "Tomas Oh (tomasohCHOM)",
-            "None (QuentinRivest)",
-            "Edward Cortes (eccortes4)",
-            "Timothy (timothyouu)",
-            "Owen Sterling (JOwen-ster)",
-            "Kevin Geier-Conney (Kevin-dgc)",
-            "Evan Jimenez (EvanCPSC)"
-        ],
-        "last_updated": "2025-04-23T03:20:56+00:00"
     }
 }
