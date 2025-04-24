@@ -21,10 +21,47 @@ LOGO = """
 
 console = Console()
 
+STAT_HANDLERS = {
+    "commits": {
+        "fetch": fetch_commits,
+        "handle": lambda data: console.print(f"{sum(data.values())} total commits!"),
+    },
+    "issues": {
+        "fetch": fetch_issues,
+        "handle": lambda data: console.print(f"{sum(data.values())} total issues"),
+    },
+    "pull_requests": {
+        "fetch": fetch_prs,
+        "handle": lambda data: console.print(
+            f"{sum(data.values())} total pull requests!"
+        ),
+    },
+    "stars": {
+        "fetch": fetch_stars,
+        "handle": lambda data: console.print(f"{sum(data.values())} total stargazers!"),
+    },
+    "contributors": {
+        "fetch": fetch_contributors,
+        "handle": lambda data: (
+            console.print(
+                f"All contributors: {list(set(c for v in data.values() for c in v))}"
+            ),
+            console.print(
+                f"{len(set(c for v in data.values() for c in v))} total contributors!"
+            ),
+        ),
+    },
+    "updates": {
+        "fetch": fetch_latest_updates,
+        "handle": lambda _: None,
+    },
+}
+
 
 @click.command()
 @click.option(
-    "--option",
+    "--resources",
+    "-r",
     type=click.Choice(
         [
             "commits",
@@ -36,34 +73,22 @@ console = Console()
             "all",
         ]
     ),
+    multiple=True,
 )
-def cli(option):
+def cli(resources):
     """OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"""
 
     console.print(LOGO, style="#11D4B1", highlight=False)
 
-    if option == "commits" or option == "all":
-        commits = fetch_commits()
-        console.print(f"{sum(commits.values())} total commits!")
-    if option == "issues" or option == "all":
-        issues = fetch_issues()
-        console.print(f"{sum(issues.values())} total issues")
-    if option == "pull_requests" or option == "all":
-        prs = fetch_prs()
-        console.print(f"{sum(prs.values())} total pull requests!")
-    if option == "updates" or option == "all":
-        fetch_latest_updates()
-    if option == "stars" or option == "all":
-        stars = fetch_stars()
-        console.print(f"{sum(stars.values())} total stargazers!")
-    if option == "contributors" or option == "all":
-        contributors = fetch_contributors()
-        contributors_set = set()
-        for repo_contributors in contributors.values():
-            for contributor in repo_contributors:
-                contributors_set.add(contributor)
-        console.print(f"All contributors: {list(contributors_set)}")
-        console.print(f"{len(contributors_set)} total contributors!")
+    resources = list(STAT_HANDLERS.keys()) if "all" in resources else resources
+    for resource in resources:
+        try:
+            data = STAT_HANDLERS[resource]["fetch"]()
+            STAT_HANDLERS[resource]["handle"](data)
+        except Exception as e:
+            console.print(
+                f"[bold red]Failed to fetch or handle '{resource}':[/bold red] {e}"
+            )
 
 
 if __name__ == "__main__":
