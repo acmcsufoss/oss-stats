@@ -1,0 +1,7 @@
+COMMITS_KEY = "commits"
+ISSUES_KEY = "issues"
+PULL_REQUESTS_KEY = "pull_requests"
+STARS_KEY = "stars"
+CONTRIBUTORS_KEY = "contributors"
+LAST_UPDATED_KEY = "last_updated"
+ALL_KEY = "all"
