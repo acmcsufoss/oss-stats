@@ -1,5 +1,6 @@
 import click
 from rich.console import Console
+import questionary
 from .const import (
     ALL_KEY,
     COMMITS_KEY,
@@ -66,38 +67,46 @@ STAT_HANDLERS = {
     },
 }
 
+RESOURCE_CHOICES = list(STAT_HANDLERS.keys())
+OSS_GREEN = "#11D4B1"
+
 
 @click.command()
 @click.option(
-    "--resources",
-    "-r",
-    type=click.Choice(
-        [
-            COMMITS_KEY,
-            ISSUES_KEY,
-            PULL_REQUESTS_KEY,
-            STARS_KEY,
-            CONTRIBUTORS_KEY,
-            LAST_UPDATED_KEY,
-            ALL_KEY,
-        ]
-    ),
-    multiple=True,
+    "--resources", "-r", type=click.Choice(RESOURCE_CHOICES + [ALL_KEY]), multiple=True
 )
 def cli(resources):
     """OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"""
+    console.print(LOGO, style=OSS_GREEN, highlight=False)
 
-    console.print(LOGO, style="#11D4B1", highlight=False)
+    if not resources:
+        console.print(
+            "What resources would you like to fetch?\n",
+            style=OSS_GREEN,
+            highlight=False,
+        )
+        resources = questionary.checkbox(
+            "Select one or more options:", choices=RESOURCE_CHOICES + [ALL_KEY]
+        ).ask()
 
-    resources = list(STAT_HANDLERS.keys()) if "all" in resources else resources
+    if ALL_KEY in resources:
+        resources = RESOURCE_CHOICES
+
+    console.print(
+        f"\nYou selected: [{OSS_GREEN}]{resources}[/{OSS_GREEN}]\n",
+        highlight=False,
+    )
+
     for resource in resources:
+        console.print(
+            f"\nFetching resource: [{OSS_GREEN}]{resource}[/{OSS_GREEN}]\n",
+            highlight=False,
+        )
         try:
             data = STAT_HANDLERS[resource]["fetch"]()
             STAT_HANDLERS[resource]["handle"](data)
         except Exception as e:
-            console.print(
-                f"[bold red]Failed to fetch or handle '{resource}':[/bold red] {e}"
-            )
+            console.print(f"Failed to fetch or handle '{resource}': {e}")
 
 
 if __name__ == "__main__":

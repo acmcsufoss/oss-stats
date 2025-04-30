@@ -1,6 +1,6 @@
 {
     "oss_stats": {
-        "commits": 49,
+        "commits": 51,
         "issues": 13,
         "pull_requests": 10,
         "stars": 5,
@@ -13,12 +13,12 @@
             "Kevin Geier-Conney (Kevin-dgc)",
             "Evan Jimenez (EvanCPSC)"
         ],
-        "last_updated": "2025-04-24T20:50:08+00:00"
+        "last_updated": "2025-04-26T02:55:57+00:00"
     },
     "api.acmcsuf.com": {
-        "commits": 191,
+        "commits": 209,
         "issues": 22,
-        "pull_requests": 33,
+        "pull_requests": 37,
         "stars": 7,
         "contributors": [
             "Josh Holman (TheJolman)",
@@ -26,9 +26,10 @@
             "Ethan Davidson (EthanThatOneKid)",
             "Adam (AdamHo2028)",
             "Akanksh Jagadish (akanksh5)",
+            "Gaballa (GaballaGit)",
             "None (dependabot[bot])"
         ],
-        "last_updated": "2025-04-17T05:54:37+00:00"
+        "last_updated": "2025-04-27T23:36:29+00:00"
     },
     "fullyhacks": {
         "commits": 432,
@@ -57,7 +58,7 @@
         "last_updated": "2025-04-14T17:35:13+00:00"
     },
     "docs": {
-        "commits": 84,
+        "commits": 85,
         "issues": 1,
         "pull_requests": 1,
         "stars": 3,
@@ -67,7 +68,7 @@
             "Evan Jimenez (EvanCPSC)",
             "Karnikaa Velumani (karnikaavelumani)"
         ],
-        "last_updated": "2025-04-21T19:21:17+00:00"
+        "last_updated": "2025-04-30T04:38:08+00:00"
     },
     "gallery": {
         "commits": 27,
@@ -84,9 +85,9 @@
         "last_updated": "2025-04-11T00:16:51+00:00"
     },
     "form": {
-        "commits": 107,
+        "commits": 120,
         "issues": 17,
-        "pull_requests": 13,
+        "pull_requests": 14,
         "stars": 8,
         "contributors": [
             "Alexander Peras (AlexthePear)",
@@ -94,7 +95,7 @@
             "Keillor Jennings (keillor)",
             "Sama Ahmed (26samaahmed)"
         ],
-        "last_updated": "2025-04-17T05:35:34+00:00"
+        "last_updated": "2025-04-28T04:27:44+00:00"
     },
     "lc-dailies": {
         "commits": 78,
