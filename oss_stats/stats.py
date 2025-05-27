@@ -3,6 +3,7 @@ from typing import List
 from github import Github, GithubException
 from dotenv import load_dotenv
 from datetime import datetime, timedelta, timezone
+from alive_progress import alive_bar
 
 from github.Repository import Repository
 
@@ -97,28 +98,30 @@ def fetch_res(res: str):
     cache = load_cache()
     result = {}
 
-    for repo in repos:
-        if repo.name not in cache:
-            create_entry(cache, repo.name)
+    with alive_bar(repos.totalCount) as bar:
+        for repo in repos:
+            if repo.name not in cache:
+                create_entry(cache, repo.name)
 
-        is_stale_check_required = res != LAST_UPDATED_KEY
-        if is_stale_check_required:
-            # Use cached results if already computed and results are from 6+ months
-            if cache[repo.name][res] != default_value and check_latest_update(repo):
-                result[repo.name] = cache[repo.name][res]
-                continue
+            is_stale_check_required = res != LAST_UPDATED_KEY
+            if is_stale_check_required:
+                # Use cached results if already computed and results are from 6+ months
+                if cache[repo.name][res] != default_value and check_latest_update(repo):
+                    result[repo.name] = cache[repo.name][res]
+                    continue
 
-        try:
-            res_value = fetch_func(repo)
-        except GithubException as e:
-            print(e)
-            res_value = default_value
+            try:
+                res_value = fetch_func(repo)
+            except GithubException as e:
+                print(e)
+                res_value = default_value
 
-        if res != LAST_UPDATED_KEY:
-            insert_latest_update(repo, cache)
+            if res != LAST_UPDATED_KEY:
+                insert_latest_update(repo, cache)
 
-        cache[repo.name][res] = res_value
-        result[repo.name] = res_value
+            cache[repo.name][res] = res_value
+            result[repo.name] = res_value
+            bar()
     save_cache(cache)
     return result
 
