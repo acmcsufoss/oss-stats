@@ -1,6 +1,6 @@
 {
     "oss_stats": {
-        "commits": 51,
+        "commits": 52,
         "issues": 13,
         "pull_requests": 10,
         "stars": 5,
@@ -13,10 +13,10 @@
             "Kevin Geier-Conney (Kevin-dgc)",
             "Evan Jimenez (EvanCPSC)"
         ],
-        "last_updated": "2025-04-26T02:55:57+00:00"
+        "last_updated": "2025-04-30T17:48:53+00:00"
     },
     "api.acmcsuf.com": {
-        "commits": 209,
+        "commits": 211,
         "issues": 22,
         "pull_requests": 37,
         "stars": 7,
@@ -29,10 +29,10 @@
             "Gaballa (GaballaGit)",
             "None (dependabot[bot])"
         ],
-        "last_updated": "2025-04-27T23:36:29+00:00"
+        "last_updated": "2025-05-24T02:21:02+00:00"
     },
     "fullyhacks": {
-        "commits": 432,
+        "commits": 438,
         "issues": 38,
         "pull_requests": 94,
         "stars": 9,
@@ -55,10 +55,10 @@
             "None (dependabot[bot])",
             "spicycurrey (spicy)"
         ],
-        "last_updated": "2025-04-14T17:35:13+00:00"
+        "last_updated": "2025-05-26T20:51:06+00:00"
     },
     "docs": {
-        "commits": 85,
+        "commits": 86,
         "issues": 1,
         "pull_requests": 1,
         "stars": 3,
@@ -68,10 +68,10 @@
             "Evan Jimenez (EvanCPSC)",
             "Karnikaa Velumani (karnikaavelumani)"
         ],
-        "last_updated": "2025-04-30T04:38:08+00:00"
+        "last_updated": "2025-05-02T21:11:42+00:00"
     },
     "gallery": {
-        "commits": 27,
+        "commits": 33,
         "issues": 1,
         "pull_requests": 7,
         "stars": 2,
@@ -82,7 +82,7 @@
             "Vladyslav Korenevskyi (tmbkoren)",
             "Emily Tsai (emilyytsai)"
         ],
-        "last_updated": "2025-04-11T00:16:51+00:00"
+        "last_updated": "2025-05-02T08:32:12+00:00"
     },
     "form": {
         "commits": 120,
@@ -95,7 +95,7 @@
             "Keillor Jennings (keillor)",
             "Sama Ahmed (26samaahmed)"
         ],
-        "last_updated": "2025-04-28T04:27:44+00:00"
+        "last_updated": "2025-05-08T01:58:46+00:00"
     },
     "lc-dailies": {
         "commits": 78,
@@ -506,7 +506,7 @@
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)"
         ],
-        "last_updated": "2023-05-20T00:43:45+00:00"
+        "last_updated": "2025-05-08T01:56:45+00:00"
     },
     "triggers-nix": {
         "commits": -1,
