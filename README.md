@@ -9,7 +9,7 @@ To access GitHub statistics, you’ll need a **GitHub personal access token**.
 ### **How to Get a GitHub Token**
 
 1. Go to [GitHub Settings](https://github.com/settings/tokens).
-2. Click **"Generate new token"**.
+2. Click **"Generate new token (classic)"**.
 3. Under **"Select scopes"**, enable the following:
     - `repo` (to access private and public repositories, if needed)
     - `read:org` (if you want to access organization-level data)
