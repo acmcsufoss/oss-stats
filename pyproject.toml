@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oss_stats"
+version = "0.1.0"
+description = "A Python CLI tool to fetch GitHub stats from acmcsufoss"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "click==8.1.7",
+    "pygithub==2.4.0",
+    "python-dotenv==1.0.1",
+    "questionary==2.1.0",
+    "rich==13.9.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+]
+
+[project.scripts]
+oss_stats = "oss_stats.cli:cli"
