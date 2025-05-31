@@ -4,7 +4,9 @@
 
 ## Prerequisites
 
-To access GitHub statistics, you’ll need a **GitHub personal access token**.
+- To access GitHub statistics, you’ll need a **GitHub personal access token**.
+- This project uses the `uv` package manager and build frontend. See https://docs.astral.sh/uv/.
+
 
 ### **How to Get a GitHub Token**
 
@@ -42,37 +44,11 @@ To access GitHub statistics, you’ll need a **GitHub personal access token**.
    GITHUB_TOKEN="your_github_token_here"
    ```
 
-4. **Run**
+4. **Run:**
    ```bash
    uv run oss_stats
    ```
 
----
-
-## Installation
-
-To install `oss_stats` locally:
-
-```bash
-uv pip install .
-```
-
-Alternatively, if you’re actively developing:
-
-```bash
-uv pip install -e .
-```
-
-> **Note:** The `-e` flag installs the project in **editable mode** so that any changes you make reflect immediately without reinstallation.
-
-## Usage
-
-Once installed, you can run the CLI tool from the terminal:
-
-```bash
-oss_stats
-```
-
----
+Note: To build a distributable version of this app, use `uv build`.
 
 Developed with 💚 by [acmcsufoss](https://github.com/acmcsufoss)
