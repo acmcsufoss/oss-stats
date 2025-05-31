@@ -28,26 +28,23 @@ To access GitHub statistics, you’ll need a **GitHub personal access token**.
    cd oss_stats
    ```
 
-2. **Create a virtual environment (recommended):**
+2. **Install dependencies using uv:**
 
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On macOS/Linux
-   .\venv\Scripts\activate   # On Windows
+   uv sync
    ```
 
-3. **Install the required dependencies:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Set up your GitHub token:**
+3. **Set up your GitHub token:**
 
    - Create a `.env` file in the project root with the following content:
 
    ```bash
    GITHUB_TOKEN="your_github_token_here"
+   ```
+
+4. **Run**
+   ```bash
+   uv run oss_stats
    ```
 
 ---
@@ -57,13 +54,13 @@ To access GitHub statistics, you’ll need a **GitHub personal access token**.
 To install `oss_stats` locally:
 
 ```bash
-pip install .
+uv pip install .
 ```
 
 Alternatively, if you’re actively developing:
 
 ```bash
-pip install -e .
+uv pip install -e .
 ```
 
 > **Note:** The `-e` flag installs the project in **editable mode** so that any changes you make reflect immediately without reinstallation.
