@@ -1,5 +1,4 @@
 [build-system]
-# requires = ["setuptools", "wheel"]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
