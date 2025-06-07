@@ -4,12 +4,14 @@
 
 ## Prerequisites
 
-To access GitHub statistics, you’ll need a **GitHub personal access token**.
+- To access GitHub statistics, you’ll need a **GitHub personal access token**.
+- This project uses the `uv` package manager and build frontend. See https://docs.astral.sh/uv/.
+
 
 ### **How to Get a GitHub Token**
 
 1. Go to [GitHub Settings](https://github.com/settings/tokens).
-2. Click **"Generate new token"**.
+2. Click **"Generate new token (classic)"**.
 3. Under **"Select scopes"**, enable the following:
     - `repo` (to access private and public repositories, if needed)
     - `read:org` (if you want to access organization-level data)
@@ -28,21 +30,13 @@ To access GitHub statistics, you’ll need a **GitHub personal access token**.
    cd oss_stats
    ```
 
-2. **Create a virtual environment (recommended):**
+2. **Install dependencies using uv:**
 
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On macOS/Linux
-   .\venv\Scripts\activate   # On Windows
+   uv sync
    ```
 
-3. **Install the required dependencies:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Set up your GitHub token:**
+3. **Set up your GitHub token:**
 
    - Create a `.env` file in the project root with the following content:
 
@@ -50,32 +44,11 @@ To access GitHub statistics, you’ll need a **GitHub personal access token**.
    GITHUB_TOKEN="your_github_token_here"
    ```
 
----
+4. **Run:**
+   ```bash
+   uv run oss_stats
+   ```
 
-## Installation
-
-To install `oss_stats` locally:
-
-```bash
-pip install .
-```
-
-Alternatively, if you’re actively developing:
-
-```bash
-pip install -e .
-```
-
-> **Note:** The `-e` flag installs the project in **editable mode** so that any changes you make reflect immediately without reinstallation.
-
-## Usage
-
-Once installed, you can run the CLI tool from the terminal:
-
-```bash
-oss_stats
-```
-
----
+Note: To build a distributable version of this app, use `uv build`.
 
 Developed with 💚 by [acmcsufoss](https://github.com/acmcsufoss)
