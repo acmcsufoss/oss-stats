@@ -1,5 +1,11 @@
 name: oss_stats-ci
 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
   build:
     name: continuous-integration
