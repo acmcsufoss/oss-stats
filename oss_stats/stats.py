@@ -126,12 +126,28 @@ def fetch_res(res: str):
     return result
 
 
-fetch_commits = lambda: fetch_res(COMMITS_KEY)
-fetch_issues = lambda: fetch_res(ISSUES_KEY)
-fetch_prs = lambda: fetch_res(PULL_REQUESTS_KEY)
-fetch_stars = lambda: fetch_res(STARS_KEY)
-fetch_contributors = lambda: fetch_res(CONTRIBUTORS_KEY)
-fetch_latest_updates = lambda: fetch_res(LAST_UPDATED_KEY)
+def fetch_commits():
+    fetch_res(COMMITS_KEY)
+
+
+def fetch_issues():
+    fetch_res(ISSUES_KEY)
+
+
+def fetch_prs():
+    fetch_res(PULL_REQUESTS_KEY)
+
+
+def fetch_stars():
+    fetch_res(STARS_KEY)
+
+
+def fetch_contributors():
+    fetch_res(CONTRIBUTORS_KEY)
+
+
+def fetch_latest_updates():
+    fetch_res(LAST_UPDATED_KEY)
 
 
 def retrieve_saved(res: str):
@@ -143,9 +159,25 @@ def retrieve_saved(res: str):
     return result
 
 
-retrieve_saved_commits = lambda: retrieve_saved(COMMITS_KEY)
-retrieve_saved_issues = lambda: retrieve_saved(ISSUES_KEY)
-retrieve_saved_prs = lambda: retrieve_saved(PULL_REQUESTS_KEY)
-retrieve_saved_stars = lambda: retrieve_saved(STARS_KEY)
-retrieve_saved_contributors = lambda: retrieve_saved(CONTRIBUTORS_KEY)
-retrieve_saved_latest_updates = lambda: retrieve_saved(LAST_UPDATED_KEY)
+def retrieve_saved_commits():
+    retrieve_saved(COMMITS_KEY)
+
+
+def retrieve_saved_issues():
+    retrieve_saved(ISSUES_KEY)
+
+
+def retrieve_saved_prs():
+    retrieve_saved(PULL_REQUESTS_KEY)
+
+
+def retrieve_saved_stars():
+    retrieve_saved(STARS_KEY)
+
+
+def retrieve_saved_contributors():
+    retrieve_saved(CONTRIBUTORS_KEY)
+
+
+def retrieve_saved_latest_updates():
+    retrieve_saved(LAST_UPDATED_KEY)
