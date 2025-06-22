@@ -133,27 +133,27 @@ def fetch_res(res: str):
 
 
 def fetch_commits():
-    fetch_res(COMMITS_KEY)
+    return fetch_res(COMMITS_KEY)
 
 
 def fetch_issues():
-    fetch_res(ISSUES_KEY)
+    return fetch_res(ISSUES_KEY)
 
 
 def fetch_prs():
-    fetch_res(PULL_REQUESTS_KEY)
+    return fetch_res(PULL_REQUESTS_KEY)
 
 
 def fetch_stars():
-    fetch_res(STARS_KEY)
+    return fetch_res(STARS_KEY)
 
 
 def fetch_contributors():
-    fetch_res(CONTRIBUTORS_KEY)
+    return fetch_res(CONTRIBUTORS_KEY)
 
 
 def fetch_latest_updates():
-    fetch_res(LAST_UPDATED_KEY)
+    return fetch_res(LAST_UPDATED_KEY)
 
 
 def retrieve_saved(res: str):
@@ -166,24 +166,24 @@ def retrieve_saved(res: str):
 
 
 def retrieve_saved_commits():
-    retrieve_saved(COMMITS_KEY)
+    return retrieve_saved(COMMITS_KEY)
 
 
 def retrieve_saved_issues():
-    retrieve_saved(ISSUES_KEY)
+    return retrieve_saved(ISSUES_KEY)
 
 
 def retrieve_saved_prs():
-    retrieve_saved(PULL_REQUESTS_KEY)
+    return retrieve_saved(PULL_REQUESTS_KEY)
 
 
 def retrieve_saved_stars():
-    retrieve_saved(STARS_KEY)
+    return retrieve_saved(STARS_KEY)
 
 
 def retrieve_saved_contributors():
-    retrieve_saved(CONTRIBUTORS_KEY)
+    return retrieve_saved(CONTRIBUTORS_KEY)
 
 
 def retrieve_saved_latest_updates():
-    retrieve_saved(LAST_UPDATED_KEY)
+    return retrieve_saved(LAST_UPDATED_KEY)
