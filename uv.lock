@@ -233,11 +233,11 @@ dev = [
 requires-dist = [
     { name = "alive-progress", specifier = ">=3.2.0" },
     { name = "black", marker = "extra == 'dev'" },
-    { name = "click", specifier = "==8.1.7" },
-    { name = "pygithub", specifier = "==2.4.0" },
-    { name = "python-dotenv", specifier = "==1.0.1" },
-    { name = "questionary", specifier = "==2.1.0" },
-    { name = "rich", specifier = "==13.9.3" },
+    { name = "click", specifier = ">=8.1.7" },
+    { name = "pygithub", specifier = ">=2.4.0" },
+    { name = "python-dotenv", specifier = ">=1.0.1" },
+    { name = "questionary", specifier = ">=2.1.0" },
+    { name = "rich", specifier = ">=13.9.3" },
     { name = "ruff", marker = "extra == 'dev'" },
 ]
 provides-extras = ["dev"]
