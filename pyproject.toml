@@ -10,11 +10,11 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "alive-progress>=3.2.0",
-    "click==8.1.7",
-    "pygithub==2.4.0",
-    "python-dotenv==1.0.1",
-    "questionary==2.1.0",
-    "rich==13.9.3",
+    "click>=8.1.7",
+    "pygithub>=2.4.0",
+    "python-dotenv>=1.0.1",
+    "questionary>=2.1.0",
+    "rich>=13.9.3",
 ]
 
 [project.optional-dependencies]
