@@ -1,11 +1,12 @@
 {
-    "oss_stats": {
-        "commits": 52,
-        "issues": 13,
-        "pull_requests": 10,
-        "stars": 5,
+    "oss-stats": {
+        "commits": 65,
+        "issues": 16,
+        "pull_requests": 17,
+        "stars": 6,
         "contributors": [
             "Tomas Oh (tomasohCHOM)",
+            "Josh Holman (TheJolman)",
             "None (QuentinRivest)",
             "Edward Cortes (eccortes4)",
             "Timothy (timothyouu)",
@@ -13,29 +14,187 @@
             "Kevin Geier-Conney (Kevin-dgc)",
             "Evan Jimenez (EvanCPSC)"
         ],
-        "last_updated": "2025-04-30T17:48:53+00:00"
+        "last_updated": "2025-08-19T19:01:56+00:00"
     },
     "api.acmcsuf.com": {
-        "commits": 211,
-        "issues": 22,
-        "pull_requests": 37,
-        "stars": 7,
+        "commits": 342,
+        "issues": 29,
+        "pull_requests": 54,
+        "stars": 9,
         "contributors": [
             "Josh Holman (TheJolman)",
             "Siddharth Vasu (sidvasu)",
-            "Ethan Davidson (EthanThatOneKid)",
-            "Adam (AdamHo2028)",
-            "Akanksh Jagadish (akanksh5)",
             "Gaballa (GaballaGit)",
+            "Ethan Davidson (EthanThatOneKid)",
+            "Adam (adamakh01)",
+            "Akanksh Jagadish (akanksh5)",
+            "Nancy Kataria (nancy-kataria)",
             "None (dependabot[bot])"
         ],
-        "last_updated": "2025-05-24T02:21:02+00:00"
+        "last_updated": "2025-08-16T23:09:39+00:00"
+    },
+    "tldr": {
+        "commits": 22,
+        "issues": 8,
+        "pull_requests": 8,
+        "stars": 7,
+        "contributors": [
+            "Joel (jjoeldaniel)",
+            "Ethan Davidson (EthanThatOneKid)"
+        ],
+        "last_updated": "2025-08-12T20:59:01+00:00"
+    },
+    "lc-dailies": {
+        "commits": 78,
+        "issues": 33,
+        "pull_requests": 34,
+        "stars": 2,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)",
+            "Karnikaa Velumani (k4rni)",
+            "Tomas Oh (tomasohCHOM)"
+        ],
+        "last_updated": "2025-08-12T20:58:47+00:00"
+    },
+    "ts-workshop": {
+        "commits": 2,
+        "issues": 0,
+        "pull_requests": 0,
+        "stars": 0,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)"
+        ],
+        "last_updated": "2025-08-12T20:58:41+00:00"
+    },
+    "archive": {
+        "commits": 1,
+        "issues": 1,
+        "pull_requests": 0,
+        "stars": 0,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)"
+        ],
+        "last_updated": "2025-08-12T20:57:47+00:00"
+    },
+    "i": {
+        "commits": 8,
+        "issues": 38,
+        "pull_requests": 1,
+        "stars": 0,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)"
+        ],
+        "last_updated": "2025-08-12T20:57:45+00:00"
+    },
+    ".github": {
+        "commits": 2,
+        "issues": 0,
+        "pull_requests": 0,
+        "stars": 0,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)"
+        ],
+        "last_updated": "2025-08-12T20:57:44+00:00"
+    },
+    "triggers-nix": {
+        "commits": -1,
+        "issues": 0,
+        "pull_requests": 0,
+        "stars": 1,
+        "contributors": [],
+        "last_updated": "2025-08-12T20:57:42+00:00"
+    },
+    "acmJane": {
+        "commits": 76,
+        "issues": 2,
+        "pull_requests": 0,
+        "stars": 1,
+        "contributors": [
+            "Joel (jjoeldaniel)"
+        ],
+        "last_updated": "2025-08-12T20:57:40+00:00"
+    },
+    "fullypack_react_native": {
+        "commits": 5,
+        "issues": 0,
+        "pull_requests": 0,
+        "stars": 1,
+        "contributors": [
+            "Daniel Truong (anhduy1202)"
+        ],
+        "last_updated": "2025-08-12T20:57:37+00:00"
+    },
+    "fullypack_sveltekit": {
+        "commits": 15,
+        "issues": 0,
+        "pull_requests": 0,
+        "stars": 1,
+        "contributors": [
+            "Diamond (diamondburned)",
+            "Angel Santoyo (anguzz)",
+            "Tomas Oh (tomasohCHOM)"
+        ],
+        "last_updated": "2025-08-12T20:57:36+00:00"
+    },
+    "fullypack_flask_vercel": {
+        "commits": 22,
+        "issues": 1,
+        "pull_requests": 3,
+        "stars": 1,
+        "contributors": [
+            "Joel (jjoeldaniel)",
+            "Daniel Truong (anhduy1202)",
+            "Eric Ly (lyeric2022)"
+        ],
+        "last_updated": "2025-08-12T20:57:35+00:00"
+    },
+    "fullypack_data_science": {
+        "commits": 8,
+        "issues": 0,
+        "pull_requests": 0,
+        "stars": 0,
+        "contributors": [
+            "Daniel Truong (anhduy1202)"
+        ],
+        "last_updated": "2025-08-12T20:57:32+00:00"
+    },
+    "fullypack_fastapi": {
+        "commits": 2,
+        "issues": 0,
+        "pull_requests": 0,
+        "stars": 1,
+        "contributors": [
+            "Charlie Taylor (charliettaylor)"
+        ],
+        "last_updated": "2025-08-12T20:57:30+00:00"
+    },
+    "fullypack_discord_python": {
+        "commits": 7,
+        "issues": 0,
+        "pull_requests": 0,
+        "stars": 0,
+        "contributors": [
+            "Joel (jjoeldaniel)"
+        ],
+        "last_updated": "2025-08-12T20:57:28+00:00"
+    },
+    "prisma-crud-examples": {
+        "commits": 12,
+        "issues": 0,
+        "pull_requests": 2,
+        "stars": 1,
+        "contributors": [
+            "Oscar Cisneros (oscisn93)",
+            "None (dependabot[bot])",
+            "jason w (jaasonw)"
+        ],
+        "last_updated": "2025-08-12T20:57:26+00:00"
     },
     "fullyhacks": {
         "commits": 438,
         "issues": 38,
         "pull_requests": 94,
-        "stars": 9,
+        "stars": 8,
         "contributors": [
             "Daniel Truong (anhduy1202)",
             "Tomas Oh (tomasohCHOM)",
@@ -46,49 +205,144 @@
             "None (elizabethmazuca)",
             "None (gnecochea)",
             "jason w (jaasonw)",
-            "Karnikaa Velumani (karnikaavelumani)",
+            "Karnikaa Velumani (k4rni)",
             "None (ChristianHuerta05)",
             "None (AndresArch)",
             "Fayssal boukhouid (FayssalG)",
             "Justin Stitt (JustinStitt)",
             "Vanessa Isabel Roque (vroque19)",
             "None (dependabot[bot])",
-            "spicycurrey (spicy)"
+            "Daniel Currey (spicy)"
         ],
-        "last_updated": "2025-05-26T20:51:06+00:00"
+        "last_updated": "2025-08-12T20:57:23+00:00"
     },
-    "docs": {
-        "commits": 86,
-        "issues": 1,
-        "pull_requests": 1,
-        "stars": 3,
+    "fullypack_html_css": {
+        "commits": 5,
+        "issues": 0,
+        "pull_requests": 5,
+        "stars": 0,
         "contributors": [
+            "Daniel Truong (anhduy1202)",
+            "Diamond (diamondburned)"
+        ],
+        "last_updated": "2025-08-12T20:57:20+00:00"
+    },
+    "acmOpportunities": {
+        "commits": 77,
+        "issues": 19,
+        "pull_requests": 17,
+        "stars": 6,
+        "contributors": [
+            "Boushra Bettir  (boushrabettir)",
             "Ethan Davidson (EthanThatOneKid)",
             "Tomas Oh (tomasohCHOM)",
-            "Evan Jimenez (EvanCPSC)",
-            "Karnikaa Velumani (karnikaavelumani)"
+            "Verinx (Katie419)"
         ],
-        "last_updated": "2025-05-02T21:11:42+00:00"
+        "last_updated": "2025-08-12T20:57:18+00:00"
     },
-    "gallery": {
-        "commits": 33,
+    "qg": {
+        "commits": 47,
         "issues": 1,
-        "pull_requests": 7,
+        "pull_requests": 0,
+        "stars": 5,
+        "contributors": [
+            "Diamond (diamondburned)",
+            "Ethan Davidson (EthanThatOneKid)"
+        ],
+        "last_updated": "2025-08-12T20:47:56+00:00"
+    },
+    "perks": {
+        "commits": 5,
+        "issues": 3,
+        "pull_requests": 4,
+        "stars": 1,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)"
+        ],
+        "last_updated": "2025-08-12T20:47:53+00:00"
+    },
+    "triggers": {
+        "commits": 250,
+        "issues": 7,
+        "pull_requests": 18,
         "stars": 2,
         "contributors": [
-            "Tyler Lui (tylermlui)",
-            "Nestor Reategui (nestor-remo)",
-            "Adrian Vazquez (adriancancode)",
-            "Vladyslav Korenevskyi (tmbkoren)",
-            "Emily Tsai (emilyytsai)"
+            "Joel (jjoeldaniel)",
+            "Ethan Davidson (EthanThatOneKid)"
         ],
-        "last_updated": "2025-05-02T08:32:12+00:00"
+        "last_updated": "2025-08-12T20:47:49+00:00"
+    },
+    "trends": {
+        "commits": 4,
+        "issues": 2,
+        "pull_requests": 1,
+        "stars": 2,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)"
+        ],
+        "last_updated": "2025-08-12T20:47:41+00:00"
+    },
+    "boardd": {
+        "commits": 39,
+        "issues": 6,
+        "pull_requests": 6,
+        "stars": 0,
+        "contributors": [
+            "Ethan Davidson (EthanThatOneKid)"
+        ],
+        "last_updated": "2025-08-12T20:47:33+00:00"
+    },
+    "acm-server": {
+        "commits": 628,
+        "issues": 15,
+        "pull_requests": 27,
+        "stars": 6,
+        "contributors": [
+            "Diamond (diamondburned)",
+            "Ethan Davidson (EthanThatOneKid)",
+            "None (dependabot[bot])",
+            "Amy (amyipdev)",
+            "Aaron Lieberman (AaronLieb)",
+            "Mark Garcia (MarkRyanGarcia)"
+        ],
+        "last_updated": "2025-08-11T00:13:44+00:00"
+    },
+    "nixpkgs": {
+        "commits": 10,
+        "issues": 0,
+        "pull_requests": 1,
+        "stars": 1,
+        "contributors": [
+            "Josh Holman (TheJolman)"
+        ],
+        "last_updated": "2025-08-03T22:40:46+00:00"
+    },
+    "API-Demo-Page": {
+        "commits": 7,
+        "issues": 0,
+        "pull_requests": 1,
+        "stars": 0,
+        "contributors": [
+            "Adam (adamakh01)",
+            "Siddharth Vasu (sidvasu)"
+        ],
+        "last_updated": "2025-08-03T04:40:48+00:00"
+    },
+    "fullypack_fastify_solid": {
+        "commits": 5,
+        "issues": 0,
+        "pull_requests": 0,
+        "stars": 0,
+        "contributors": [
+            "Oscar Cisneros (oscisn93)"
+        ],
+        "last_updated": "2025-07-18T21:59:56+00:00"
     },
     "form": {
         "commits": 120,
         "issues": 17,
         "pull_requests": 14,
-        "stars": 8,
+        "stars": 9,
         "contributors": [
             "Alexander Peras (AlexthePear)",
             "Ethan Davidson (EthanThatOneKid)",
@@ -97,17 +351,32 @@
         ],
         "last_updated": "2025-05-08T01:58:46+00:00"
     },
-    "lc-dailies": {
-        "commits": 78,
-        "issues": 33,
-        "pull_requests": 34,
+    "docs": {
+        "commits": 86,
+        "issues": 2,
+        "pull_requests": 1,
         "stars": 3,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
-            "Karnikaa Velumani (karnikaavelumani)",
-            "Tomas Oh (tomasohCHOM)"
+            "Tomas Oh (tomasohCHOM)",
+            "Evan Jimenez (EvanCPSC)",
+            "Karnikaa Velumani (k4rni)"
         ],
-        "last_updated": "2025-03-31T21:38:01+00:00"
+        "last_updated": "2025-05-02T21:11:42+00:00"
+    },
+    "gallery": {
+        "commits": 33,
+        "issues": 1,
+        "pull_requests": 8,
+        "stars": 3,
+        "contributors": [
+            "Tyler Lui (tylermlui)",
+            "Nestor Reategui (nestor-remo)",
+            "Emily Tsai (emilyytsai)",
+            "Adrian Vazquez (adriancancode)",
+            "Vladyslav Korenevskyi (tmbkoren)"
+        ],
+        "last_updated": "2025-05-02T08:32:12+00:00"
     },
     "1st": {
         "commits": 399,
@@ -121,23 +390,22 @@
             "Sama Ahmed (26samaahmed)",
             "Owen Sterling (JOwen-ster)",
             "Tyler Lui (tylermlui)",
-            "Timothy (timothyouu)",
-            "Chanran kim (isliese)",
             "Nestor Reategui (nestor-remo)",
-            "Mark Garcia (MarkRyanGarcia)",
-            "dianella \u02da\u029a\u2661\u025e\u02da (dianellasy)",
-            "None (ahpham123)",
-            "Akanksh Jagadish (akanksh5)",
-            "Adrian Vazquez (adriancancode)",
+            "Chanran Kim (isliese)",
+            "Timothy (timothyouu)",
             "Jerem (JeremiahHerring)",
+            "Adrian Vazquez (adriancancode)",
+            "Akanksh Jagadish (akanksh5)",
+            "None (ahpham123)",
+            "dianella \u02da\u029a\u2661\u025e\u02da (dianellasy)",
+            "Mark Garcia (MarkRyanGarcia)",
             "Alexander Peras (AlexthePear)",
             "ryan (ryan-avancena)",
-            "Vladyslav Korenevskyi (tmbkoren)",
             "Siddharth Vasu (sidvasu)",
-            "Karnikaa Velumani (karnikaavelumani)",
+            "Vladyslav Korenevskyi (tmbkoren)",
+            "Karnikaa Velumani (k4rni)",
             "None (thecodeofdaniel)",
             "Jeevan Gowda Hemanth Kumar (jeevangowda0711)",
-            "Mariia Grushina (MariiaGrushina)",
             "Joshua Duenas (JoshDuenas)",
             "John Carlo Manuel (johncmanuel)",
             "Jeet  (jeeth25)",
@@ -154,7 +422,7 @@
             "Harrison Thayer (harrisonthayer04)",
             "Jacob Carlson (jiink)",
             "Josh Holman (TheJolman)",
-            "None (jovannadelat)",
+            "Jovanna De La Trinidad (jovannadelat)",
             "Keillor Jennings (keillor)",
             "None (kicacho)",
             "None (lanayam)",
@@ -165,7 +433,7 @@
             "Oscar Cisneros (oscisn93)",
             "Peter Chau (Peterchauu)",
             "Chandar Rathi (rathichandar)",
-            "Adam (AdamHo2028)",
+            "Adam (adamakh01)",
             "Ashley Chan (Ashleyc417)",
             "Beatriz Torres Archundia (Btorre0)",
             "None (Belalaskaik)",
@@ -191,31 +459,6 @@
         ],
         "last_updated": "2025-02-27T02:14:26+00:00"
     },
-    "tldr": {
-        "commits": 22,
-        "issues": 8,
-        "pull_requests": 8,
-        "stars": 8,
-        "contributors": [
-            "Joel (jjoeldaniel)",
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2025-02-20T01:39:01+00:00"
-    },
-    "acm-server": {
-        "commits": 618,
-        "issues": 15,
-        "pull_requests": 27,
-        "stars": 6,
-        "contributors": [
-            "Diamond (diamondburned)",
-            "Ethan Davidson (EthanThatOneKid)",
-            "None (dependabot[bot])",
-            "Amy (amyipdev)",
-            "Aaron Lieberman (AaronLieb)"
-        ],
-        "last_updated": "2025-04-11T17:30:04+00:00"
-    },
     "shorter": {
         "commits": 44,
         "issues": 11,
@@ -223,7 +466,7 @@
         "stars": 2,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
-            "Karnikaa Velumani (karnikaavelumani)"
+            "Karnikaa Velumani (k4rni)"
         ],
         "last_updated": "2024-11-01T20:43:52+00:00"
     },
@@ -234,22 +477,9 @@
         "stars": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
-            "Karnikaa Velumani (karnikaavelumani)"
+            "Karnikaa Velumani (k4rni)"
         ],
         "last_updated": "2024-10-24T07:00:26+00:00"
-    },
-    "acmOpportunities": {
-        "commits": 77,
-        "issues": 19,
-        "pull_requests": 17,
-        "stars": 7,
-        "contributors": [
-            "Boushra Bettir  (boushrabettir)",
-            "Ethan Davidson (EthanThatOneKid)",
-            "Tomas Oh (tomasohCHOM)",
-            "Verinx (Katie419)"
-        ],
-        "last_updated": "2024-08-05T09:18:28+00:00"
     },
     "dash.acmcsuf.com": {
         "commits": -1,
@@ -266,7 +496,7 @@
         "stars": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
-            "Karnikaa Velumani (karnikaavelumani)"
+            "Karnikaa Velumani (k4rni)"
         ],
         "last_updated": "2024-04-11T03:44:41+00:00"
     },
@@ -276,9 +506,9 @@
         "pull_requests": 4,
         "stars": 1,
         "contributors": [
-            "Karnikaa Velumani (karnikaavelumani)",
+            "Karnikaa Velumani (k4rni)",
             "Justin Lee (JustinPLee)",
-            "None (EBYEMJC1)",
+            "Sara Sadek (EBYEMJC1)",
             "Ethan Davidson (EthanThatOneKid)"
         ],
         "last_updated": "2024-02-29T02:17:54+00:00"
@@ -290,38 +520,6 @@
         "stars": 0,
         "contributors": [],
         "last_updated": "2024-02-27T02:10:01+00:00"
-    },
-    "fullypack_fastapi": {
-        "commits": 2,
-        "issues": 0,
-        "pull_requests": 0,
-        "stars": 2,
-        "contributors": [
-            "Charlie Taylor (charliettaylor)"
-        ],
-        "last_updated": "2024-02-24T06:49:12+00:00"
-    },
-    "fullypack_sveltekit": {
-        "commits": 15,
-        "issues": 0,
-        "pull_requests": 0,
-        "stars": 2,
-        "contributors": [
-            "Diamond (diamondburned)",
-            "Angel Santoyo (anguzz)",
-            "Tomas Oh (tomasohCHOM)"
-        ],
-        "last_updated": "2025-04-01T18:52:37+00:00"
-    },
-    "fullypack_react_native": {
-        "commits": 5,
-        "issues": 0,
-        "pull_requests": 0,
-        "stars": 2,
-        "contributors": [
-            "Daniel Truong (anhduy1202)"
-        ],
-        "last_updated": "2024-02-16T08:40:51+00:00"
     },
     "clubannounce": {
         "commits": 12,
@@ -343,26 +541,6 @@
             "Ethan Davidson (EthanThatOneKid)"
         ],
         "last_updated": "2024-01-09T01:24:33+00:00"
-    },
-    "trends": {
-        "commits": 4,
-        "issues": 2,
-        "pull_requests": 1,
-        "stars": 3,
-        "contributors": [
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2023-11-14T22:39:27+00:00"
-    },
-    "i": {
-        "commits": 8,
-        "issues": 38,
-        "pull_requests": 1,
-        "stars": 1,
-        "contributors": [
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2023-10-24T23:17:39+00:00"
     },
     "qb64_windows": {
         "commits": 1,
@@ -395,16 +573,6 @@
         ],
         "last_updated": "2023-07-28T18:26:11+00:00"
     },
-    "ts-workshop": {
-        "commits": 2,
-        "issues": 0,
-        "pull_requests": 0,
-        "stars": 1,
-        "contributors": [
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2023-07-22T13:42:37+00:00"
-    },
     "js-workshop": {
         "commits": 11,
         "issues": 0,
@@ -422,21 +590,9 @@
         "stars": 0,
         "contributors": [
             "Ethan Davidson (EthanThatOneKid)",
-            "Karnikaa Velumani (karnikaavelumani)"
+            "Karnikaa Velumani (k4rni)"
         ],
         "last_updated": "2023-07-11T06:22:25+00:00"
-    },
-    "fullypack_flask_vercel": {
-        "commits": 22,
-        "issues": 1,
-        "pull_requests": 3,
-        "stars": 2,
-        "contributors": [
-            "Joel (jjoeldaniel)",
-            "Daniel Truong (anhduy1202)",
-            "Eric Ly (lyeric2022)"
-        ],
-        "last_updated": "2025-04-14T19:16:42+00:00"
     },
     "api-workshop": {
         "commits": 5,
@@ -448,16 +604,6 @@
         ],
         "last_updated": "2023-06-30T17:47:30+00:00"
     },
-    "acmJane": {
-        "commits": 76,
-        "issues": 2,
-        "pull_requests": 0,
-        "stars": 2,
-        "contributors": [
-            "Joel (jjoeldaniel)"
-        ],
-        "last_updated": "2023-06-24T07:26:27+00:00"
-    },
     "denokv-workshop": {
         "commits": 3,
         "issues": 0,
@@ -467,128 +613,5 @@
             "Ethan Davidson (EthanThatOneKid)"
         ],
         "last_updated": "2023-06-14T21:24:17+00:00"
-    },
-    "perks": {
-        "commits": 5,
-        "issues": 3,
-        "pull_requests": 4,
-        "stars": 2,
-        "contributors": [
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2023-06-09T00:10:49+00:00"
-    },
-    "boardd": {
-        "commits": 39,
-        "issues": 6,
-        "pull_requests": 6,
-        "stars": 1,
-        "contributors": [
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2023-05-20T10:35:41+00:00"
-    },
-    "archive": {
-        "commits": 1,
-        "issues": 1,
-        "pull_requests": 0,
-        "stars": 1,
-        "contributors": [
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2023-05-20T00:43:56+00:00"
-    },
-    ".github": {
-        "commits": 2,
-        "issues": 0,
-        "pull_requests": 0,
-        "stars": 1,
-        "contributors": [
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2025-05-08T01:56:45+00:00"
-    },
-    "triggers-nix": {
-        "commits": -1,
-        "issues": 0,
-        "pull_requests": 0,
-        "stars": 2,
-        "contributors": [],
-        "last_updated": "2023-05-20T00:43:35+00:00"
-    },
-    "fullypack_data_science": {
-        "commits": 8,
-        "issues": 0,
-        "pull_requests": 0,
-        "stars": 1,
-        "contributors": [
-            "Daniel Truong (anhduy1202)"
-        ],
-        "last_updated": "2023-05-20T00:43:12+00:00"
-    },
-    "fullypack_discord_python": {
-        "commits": 7,
-        "issues": 0,
-        "pull_requests": 0,
-        "stars": 1,
-        "contributors": [
-            "Joel (jjoeldaniel)"
-        ],
-        "last_updated": "2023-05-20T00:43:06+00:00"
-    },
-    "prisma-crud-examples": {
-        "commits": 12,
-        "issues": 0,
-        "pull_requests": 2,
-        "stars": 1,
-        "contributors": [
-            "Oscar Cisneros (oscisn93)",
-            "None (dependabot[bot])",
-            "jason w (jaasonw)"
-        ],
-        "last_updated": "2023-05-20T00:43:02+00:00"
-    },
-    "fullypack_html_css": {
-        "commits": 5,
-        "issues": 0,
-        "pull_requests": 5,
-        "stars": 1,
-        "contributors": [
-            "Daniel Truong (anhduy1202)",
-            "Diamond (diamondburned)"
-        ],
-        "last_updated": "2023-05-20T00:42:56+00:00"
-    },
-    "fullypack_fastify_solid": {
-        "commits": 5,
-        "issues": 0,
-        "pull_requests": 0,
-        "stars": 1,
-        "contributors": [
-            "Oscar Cisneros (oscisn93)"
-        ],
-        "last_updated": "2023-05-20T00:42:53+00:00"
-    },
-    "qg": {
-        "commits": 47,
-        "issues": 1,
-        "pull_requests": 0,
-        "stars": 6,
-        "contributors": [
-            "Diamond (diamondburned)",
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2023-03-26T12:09:11+00:00"
-    },
-    "triggers": {
-        "commits": 250,
-        "issues": 7,
-        "pull_requests": 18,
-        "stars": 3,
-        "contributors": [
-            "Joel (jjoeldaniel)",
-            "Ethan Davidson (EthanThatOneKid)"
-        ],
-        "last_updated": "2023-02-22T09:54:38+00:00"
     }
 }

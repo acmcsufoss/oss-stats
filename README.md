@@ -1,6 +1,6 @@
-# oss_stats
+# oss-stats
 
-`oss_stats` is a Python CLI tool that fetches statistics from the [acmcsufoss](https://github.com/acmcsufoss) GitHub organization and the [acmcsuf.com](https://github.com/EthanThatOneKid/acmcsuf.com) repository, including issues, pull requests, commits, and total number of contributors. It provides an interactive command-line interface with colored outputs to make exploring GitHub data simple and engaging.
+`oss-stats` is a Python CLI tool that fetches statistics from the [acmcsufoss](https://github.com/acmcsufoss) GitHub organization and the [acmcsuf.com](https://github.com/EthanThatOneKid/acmcsuf.com) repository, including issues, pull requests, commits, and total number of contributors. It provides an interactive command-line interface with colored outputs to make exploring GitHub data simple and engaging.
 
 ## Prerequisites
 
@@ -26,8 +26,8 @@
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/acmcsufoss/oss_stats.git
-   cd oss_stats
+   git clone https://github.com/acmcsufoss/oss-stats.git
+   cd oss-stats
    ```
 
 2. **Install dependencies using uv:**
@@ -46,7 +46,7 @@
 
 4. **Run:**
    ```bash
-   uv run oss_stats
+   uv run oss-stats
    ```
 
 Note: To build a distributable version of this app, use `uv build`.

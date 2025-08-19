@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "oss_stats"
+name = "oss-stats"
 version = "0.1.0"
 description = "A Python CLI tool to fetch GitHub stats from acmcsufoss"
 readme = "README.md"
@@ -24,4 +24,4 @@ dev = [
 ]
 
 [project.scripts]
-oss_stats = "oss_stats.cli:cli"
+oss-stats = "oss_stats.cli:cli"
