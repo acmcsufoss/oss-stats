@@ -106,28 +106,45 @@ def fetch_res(res: str):
 
     with alive_bar(repos.totalCount) as bar:
         for repo in repos:
-            if repo.name not in cache:
-                create_entry(cache, repo.name)
+            try:
+                if repo.name not in cache:
+                    create_entry(cache, repo.name)
 
-            is_stale_check_required = res != LAST_UPDATED_KEY
-            if is_stale_check_required:
-                # Use cached results if already computed and results are from 6+ months
-                if cache[repo.name][res] != default_value and check_latest_update(repo):
-                    result[repo.name] = cache[repo.name][res]
+                # 1/12/2026 EDIT: acmcsuf.com is now part of the acmcsufoss org
+                # However, it has well over 1000 issues/PRs, making it unviable to
+                # fetch this resource with our current method with the way the
+                # GitHub REST API currently handles this resource.
+                #
+                # TODO: handle this better if a more efficient solution exists
+                if repo.name == "acmcsuf.com" and res in [
+                    ISSUES_KEY,
+                    PULL_REQUESTS_KEY,
+                ]:
                     continue
 
-            try:
-                res_value = fetch_func(repo)
-            except GithubException as e:
-                print(e)
-                res_value = default_value
+                is_stale_check_required = res != LAST_UPDATED_KEY
+                if is_stale_check_required:
+                    # Use cached results if already computed and results are from 6+ months
+                    if cache[repo.name][res] != default_value and check_latest_update(
+                        repo
+                    ):
+                        result[repo.name] = cache[repo.name][res]
+                        continue
 
-            if res != LAST_UPDATED_KEY:
-                insert_latest_update(repo, cache)
+                try:
+                    res_value = fetch_func(repo)
+                except GithubException as e:
+                    print(e)
+                    res_value = default_value
 
-            cache[repo.name][res] = res_value
-            result[repo.name] = res_value
-            bar()
+                if res != LAST_UPDATED_KEY:
+                    insert_latest_update(repo, cache)
+
+                cache[repo.name][res] = res_value
+                result[repo.name] = res_value
+            finally:
+                bar()
+
     save_cache(cache)
     return result
 
