@@ -22,6 +22,8 @@
 
 > ⚠️ **Important:** Keep this token secret! Treat it like a password.
 
+Note: To build a distributable version of this app, use `uv build`.
+
 ---
 
 ## Setting up the Development Environment
@@ -52,6 +54,29 @@
    uv run oss-stats
    ```
 
-Note: To build a distributable version of this app, use `uv build`.
+## How to Contribute
+
+We welcome contributions! To contribute to `oss-stats`, please follow these steps:
+
+1. **Fork the repository:**
+   - Click the **Fork** button at the top right of the [acmcsufoss/oss-stats](https://github.com/acmcsufoss/oss-stats) repository to create a copy in your account.
+
+2. **Clone your fork:**
+   ```bash
+   # Replace <YOUR_USERNAME> with your GitHub username
+   git clone [https://github.com/](https://github.com/)<YOUR_USERNAME>/oss-stats.git
+   cd oss-stats
+3. **Add the upstream remote:**
+   ```bash
+   git remote add upstream [https://github.com/acmcsufoss/oss-stats.git](https://github.com/acmcsufoss/oss-stats.git)
+4. **Commit and Push**
+   ```bash
+   git add .
+   git commit -m "feat: description of the change"
+   git push origin feature/your-task-name
+5. **Open a Pull Request:**
+   - Go to the original oss-stats repo on GitHub.
+   - You will see a prompt to "Compare & pull request".
+   - Describe your changes and submit for review.
 
 Developed with 💚 by [acmcsufoss](https://github.com/acmcsufoss)
