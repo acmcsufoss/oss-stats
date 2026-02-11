@@ -53,6 +53,7 @@ Note: To build a distributable version of this app, use `uv build`.
    ```bash
    uv run oss-stats
    ```
+---
 
 ## How to Contribute
 
@@ -78,5 +79,7 @@ We welcome contributions! To contribute to `oss-stats`, please follow these step
    - Go to the original oss-stats repo on GitHub.
    - You will see a prompt to "Compare & pull request".
    - Describe your changes and submit for review.
+
+---
 
 Developed with 💚 by [acmcsufoss](https://github.com/acmcsufoss)
