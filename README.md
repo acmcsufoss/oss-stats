@@ -20,7 +20,8 @@
     - `read:org` (if you want to access organization-level data)
 4. Click **"Generate token"** and **copy** the token (you won’t be able to see it again).
 
-> ⚠️ **Important:** Keep this token secret! Treat it like a password.
+> [!Important]
+> Keep this token secret! Treat it like a password.
 
 Note: To build a distributable version of this app, use `uv build`.
 
