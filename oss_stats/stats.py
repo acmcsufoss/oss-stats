@@ -5,6 +5,7 @@ from github import Github, GithubException
 from dotenv import load_dotenv
 from datetime import datetime, timedelta, timezone
 from alive_progress import alive_bar
+from rich import print
 
 from github.Repository import Repository
 
@@ -22,7 +23,7 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
 token = os.getenv("GITHUB_TOKEN")
 
 if not token:
-    print("Please set your github token!")
+    print("Please set your [code]GITHUB_TOKEN[/code] environment variable!")
     sys.exit(1)
 
 gh = Github(token)
