@@ -5,6 +5,7 @@ from github import Github, GithubException
 from dotenv import load_dotenv
 from datetime import datetime, timedelta, timezone
 from alive_progress import alive_bar
+from .error import error
 
 from github.Repository import Repository
 
@@ -22,7 +23,7 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
 token = os.getenv("GITHUB_TOKEN")
 
 if not token:
-    print("Please set your github token!")
+    error("The [code] GITHUB_TOKEN [/] environment variable is unset!")
     sys.exit(1)
 
 gh = Github(token)
@@ -31,7 +32,7 @@ org = "acmcsufoss"
 try:
     repos = gh.get_organization(org).get_repos(sort="updated")
 except GithubException as e:
-    print(f"GitHub API Error: {e.data.get('message', str(e))}")
+    error(f"GitHub API: {e.data.get('message', str(e))}")
     sys.exit(1)
 six_months_ago = datetime.now(timezone.utc) - timedelta(days=182)
 
