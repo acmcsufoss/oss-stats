@@ -1,4 +1,5 @@
 from pathlib import Path
+from platformdirs import user_cache_path
 import json
 
 from .const import (
@@ -10,9 +11,8 @@ from .const import (
     STARS_KEY,
 )
 
-cache_dir = Path.home() / ".cache" / "oss-stats"
-if not cache_dir.is_dir():
-    cache_dir.mkdir(parents=True, exist_ok=True)
+cache_dir = user_cache_path("oss-stats", "Open Source @ ACM")
+Path.mkdir(cache_dir, exist_ok = True)
 CACHE_FILE = f"{cache_dir}/stats.json"
 
 
