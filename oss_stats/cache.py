@@ -1,3 +1,5 @@
+from pathlib import Path
+from platformdirs import user_cache_path
 import json
 
 from .const import (
@@ -9,7 +11,9 @@ from .const import (
     STARS_KEY,
 )
 
-CACHE_FILE = "stats/stats.json"
+cache_dir = user_cache_path("oss-stats", appauthor=False)
+Path.mkdir(cache_dir, parents=True, exist_ok=True)
+CACHE_FILE = f"{cache_dir}/stats.json"
 
 
 def load_cache():
