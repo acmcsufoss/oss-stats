@@ -11,7 +11,7 @@ from .const import (
     STARS_KEY,
 )
 
-cache_dir = user_cache_path("oss-stats", appauthor = False)
+cache_dir = user_cache_path("oss-stats", appauthor=False)
 Path.mkdir(cache_dir, parents = True, exist_ok=True)
 CACHE_FILE = f"{cache_dir}/stats.json"
 
