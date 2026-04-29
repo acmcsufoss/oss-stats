@@ -1,12 +1,17 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
 name = "oss-stats"
 version = "0.1.0"
+authors = [
+{ name="Josh Holman", email="git@jolman.me"},
+]
 description = "A Python CLI tool to fetch GitHub stats from acmcsufoss"
 readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.13"
 dependencies = [
     "alive-progress>=3.2.0",
@@ -18,11 +23,19 @@ dependencies = [
     "platformdirs>=4.9.6",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
-    "black",
-    "ruff",
+    "ruff>=0.11.11",
+    "twine>=6.2.0",
 ]
 
 [project.scripts]
 oss-stats = "oss_stats.cli:cli"
+
+[build-system]
+requires = ["uv_build>=0.11.6,<0.12"]
+build-backend = "uv_build"
+
+[project.urls]
+Homepage = "https://github.com/acmcsufoss/oss-stats"
+Issues = "https://github.com/acmcsufoss/oss-stats/issues"
