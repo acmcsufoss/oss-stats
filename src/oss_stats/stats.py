@@ -19,7 +19,14 @@ from .const import (
 )
 from .cache import create_entry, load_cache, save_cache
 
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
+#first get the current directory
+currentDir = os.path.dirname(__file__)
+
+#we need parentDir to be able to read the .env file
+parentDir = os.path.basename(currentDir)
+
+load_dotenv(dotenv_path=os.path.join(parentDir, "..", ".env"))
+print(os.path.join(parentDir, "..", ".env"))
 token = os.getenv("GITHUB_TOKEN")
 
 if not token:
