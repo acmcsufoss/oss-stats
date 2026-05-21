@@ -19,10 +19,8 @@ from .const import (
 )
 from .cache import create_entry, load_cache, save_cache
 
-#first get the current directory
 currentDir = os.path.dirname(__file__)
 
-#we need parentDir to be able to read the .env file
 parentDir = os.path.basename(currentDir)
 
 load_dotenv(dotenv_path=os.path.join(parentDir, "..", ".env"))
