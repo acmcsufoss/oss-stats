@@ -88,26 +88,28 @@ OSS_GREEN = "#11D4B1"
 ACTION_CHOICES = ["refetch", "aggregate"]
 RESOURCE_CHOICES = list(STAT_HANDLERS.keys())
 
+
 def cli():
     # -- cli arguments --
-    parser = argparse.ArgumentParser(description="OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com")
-    parser.add_argument(
-        '-a',
-        '--actions',
-        metavar='[refetch | aggregate]',
-        help='refetch fetches data from github | aggregate displays the data in the terminal',
-#        nargs='+',
-        choices=ACTION_CHOICES
+    parser = argparse.ArgumentParser(
+        description="OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"
     )
     parser.add_argument(
-        '-r',
-        '--resources',
-        metavar='[commits | issues | pull_requests | stars | contributors | last_updated | all]',
-        help='resource to fetch/display',
-#        nargs='+',
-        choices=(RESOURCE_CHOICES + [ALL_KEY])
+        "-a",
+        "--actions",
+        metavar="[refetch | aggregate]",
+        help="refetch fetches data from github | aggregate displays the data in the terminal",
+        #        nargs='+',
+        choices=ACTION_CHOICES,
     )
-
+    parser.add_argument(
+        "-r",
+        "--resources",
+        metavar="[commits | issues | pull_requests | stars | contributors | last_updated | all]",
+        help="resource to fetch/display",
+        #        nargs='+',
+        choices=(RESOURCE_CHOICES + [ALL_KEY]),
+    )
 
     args = parser.parse_args()
 
