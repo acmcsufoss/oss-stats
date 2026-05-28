@@ -1,4 +1,4 @@
-import click
+import argparse
 from rich.console import Console
 import questionary
 from .const import (
@@ -89,13 +89,34 @@ ACTION_CHOICES = ["refetch", "aggregate"]
 RESOURCE_CHOICES = list(STAT_HANDLERS.keys())
 
 
-@click.command()
-@click.option("--actions", "-a", type=click.Choice(ACTION_CHOICES), multiple=True)
-@click.option(
-    "--resources", "-r", type=click.Choice(RESOURCE_CHOICES + [ALL_KEY]), multiple=True
-)
-def cli(actions, resources):
-    """OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"""
+def cli():
+    # -- cli arguments --
+    parser = argparse.ArgumentParser(
+        description="OSS Stats - Fetch GitHub stats from acmcsufoss and acmcsuf.com"
+    )
+    parser.add_argument(
+        "-a",
+        "--actions",
+        metavar="[refetch | aggregate]",
+        help="refetch fetches data from github | aggregate displays the data in the terminal",
+        #        nargs='+',
+        choices=ACTION_CHOICES,
+    )
+    parser.add_argument(
+        "-r",
+        "--resources",
+        metavar="[commits | issues | pull_requests | stars | contributors | last_updated | all]",
+        help="resource to fetch/display",
+        #        nargs='+',
+        choices=(RESOURCE_CHOICES + [ALL_KEY]),
+    )
+
+    args = parser.parse_args()
+
+    actions = args.actions
+    resources = args.resources
+    # -- cli arguments end --
+
     console.print(LOGO, style=OSS_GREEN, highlight=False)
 
     if not actions:
