@@ -1,0 +1,124 @@
+{
+  "runs": {
+    "182": {
+      "measured_at_utc": "2026-07-25T23:26:17.662282+00:00",
+      "repos": 59,
+      "stale_after_days": 182,
+      "cache_eligible_repos": 46,
+      "cold": {
+        "total_seconds": 472.37,
+        "total_api_calls": 980,
+        "per_resource": {
+          "commits": {
+            "seconds": 32.07,
+            "api_calls": 62
+          },
+          "issues": {
+            "seconds": 212.21,
+            "api_calls": 418
+          },
+          "pull_requests": {
+            "seconds": 30.59,
+            "api_calls": 58
+          },
+          "stars": {
+            "seconds": 27.91,
+            "api_calls": 59
+          },
+          "contributors": {
+            "seconds": 169.58,
+            "api_calls": 383
+          }
+        }
+      },
+      "warm": {
+        "total_seconds": 227.01,
+        "total_api_calls": 484,
+        "per_resource": {
+          "commits": {
+            "seconds": 7.53,
+            "api_calls": 15
+          },
+          "issues": {
+            "seconds": 82.29,
+            "api_calls": 159
+          },
+          "pull_requests": {
+            "seconds": 6.52,
+            "api_calls": 12
+          },
+          "stars": {
+            "seconds": 27.55,
+            "api_calls": 59
+          },
+          "contributors": {
+            "seconds": 103.13,
+            "api_calls": 239
+          }
+        }
+      },
+      "api_call_reduction_pct": 50.6,
+      "wall_clock_reduction_pct": 51.9
+    },
+    "90": {
+      "measured_at_utc": "2026-07-25T23:37:52.324968+00:00",
+      "repos": 59,
+      "stale_after_days": 90,
+      "cache_eligible_repos": 53,
+      "cold": {
+        "total_seconds": 473.07,
+        "total_api_calls": 980,
+        "per_resource": {
+          "commits": {
+            "seconds": 32.15,
+            "api_calls": 62
+          },
+          "issues": {
+            "seconds": 212.78,
+            "api_calls": 418
+          },
+          "pull_requests": {
+            "seconds": 30.18,
+            "api_calls": 58
+          },
+          "stars": {
+            "seconds": 27.79,
+            "api_calls": 59
+          },
+          "contributors": {
+            "seconds": 170.17,
+            "api_calls": 383
+          }
+        }
+      },
+      "warm": {
+        "total_seconds": 192.37,
+        "total_api_calls": 411,
+        "per_resource": {
+          "commits": {
+            "seconds": 3.96,
+            "api_calls": 8
+          },
+          "issues": {
+            "seconds": 62.84,
+            "api_calls": 123
+          },
+          "pull_requests": {
+            "seconds": 2.77,
+            "api_calls": 5
+          },
+          "stars": {
+            "seconds": 27.85,
+            "api_calls": 59
+          },
+          "contributors": {
+            "seconds": 94.95,
+            "api_calls": 216
+          }
+        }
+      },
+      "api_call_reduction_pct": 58.1,
+      "wall_clock_reduction_pct": 59.3
+    }
+  }
+}
