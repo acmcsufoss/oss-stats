@@ -30,3 +30,9 @@ jobs:
 
       - name: Lint
         run: uv run ruff check
+
+      # Skips with exit 0 unless GITHUB_TOKEN is available, because importing
+      # oss_stats.stats performs module-level API work. To run these for real,
+      # add `env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` to this step.
+      - name: Tests
+        run: uv run python tests/test_stale.py
