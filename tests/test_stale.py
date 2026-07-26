@@ -4,30 +4,23 @@
 Run with:
     uv run python tests/test_stale.py
 
-Importing oss_stats.stats performs module-level API work and exits if
-GITHUB_TOKEN is unset, so these checks skip rather than fail when no token is
-available. The assertions themselves make no network calls: they exercise
-is_stale() and set_stale_after() against stub repos with fixed timestamps.
+The module-level GitHub setup is mocked during import, so these checks run
+without credentials or network access.
 """
 
 import os
 import sys
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
+from unittest.mock import Mock, patch
 
-from dotenv import load_dotenv
-
-REPO_ROOT = Path(__file__).resolve().parent.parent
-
-# stats.py resolves its dotenv path to src/.env rather than the repo root, so
-# load the real one here to keep this runnable from a clean checkout.
-load_dotenv(dotenv_path=REPO_ROOT / ".env")
-
-if not os.getenv("GITHUB_TOKEN"):
-    print("SKIP: GITHUB_TOKEN unset; oss_stats.stats cannot be imported without it.")
-    sys.exit(0)
-
-from oss_stats import stats  # noqa: E402
+with (
+    patch.dict(os.environ, {"GITHUB_TOKEN": "test-token"}),
+    patch("github.Github.get_organization") as get_organization,
+):
+    organization = Mock()
+    organization.get_repos.return_value = Mock()
+    get_organization.return_value = organization
+    from oss_stats import stats  # noqa: E402
 
 
 class StubRepo:
