@@ -71,8 +71,13 @@ def get_prs(repo: Repository) -> int:
 
 
 def get_stars(repo: Repository) -> int:
-    """Returns the number of stargazers (stars) for the repository"""
-    return repo.get_stargazers().totalCount
+    """Returns the number of stargazers (stars) for the repository
+
+    Reads stargazers_count from the repo payload rather than paginating
+    /stargazers, which returns 404 for most repos in this org and costs one
+    request per repo when it does work.
+    """
+    return repo.stargazers_count
 
 
 def get_contributors(repo: Repository) -> List[str]:
