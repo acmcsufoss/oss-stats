@@ -2,7 +2,7 @@ import os
 import sys
 from typing import List
 from github import Github, GithubException
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 from datetime import datetime, timedelta, timezone
 from alive_progress import alive_bar
 from .error import error
@@ -19,7 +19,10 @@ from .const import (
 )
 from .cache import create_entry, load_cache, save_cache
 
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
+# Search upward from the working directory rather than relative to this file.
+# A __file__-relative path resolved to src/.env, which never exists, and would
+# point into site-packages once the package is pip-installed.
+load_dotenv(find_dotenv(usecwd=True))
 token = os.getenv("GITHUB_TOKEN")
 
 if not token:
