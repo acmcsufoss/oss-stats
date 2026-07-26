@@ -37,14 +37,28 @@ try:
 except GithubException as e:
     error(f"GitHub API: {e.data.get('message', str(e))}")
     sys.exit(1)
-six_months_ago = datetime.now(timezone.utc) - timedelta(days=182)
+STALE_AFTER_DAYS = 90
 
 
-def check_latest_update(repo):
+def set_stale_after(days: int) -> None:
+    """Sets how many days a repo must go untouched before cached stats are reused.
+
+    Passing 0 disables cache reuse entirely, forcing a full refresh.
+    """
+    global STALE_AFTER_DAYS
+    if days < 0:
+        raise ValueError("--stale-after must be 0 or greater")
+    STALE_AFTER_DAYS = days
+
+
+def is_stale(repo: Repository) -> bool:
+    """Returns True if the repo is old enough that its cached stats can be reused"""
+    if STALE_AFTER_DAYS <= 0:
+        return False
+    cutoff = datetime.now(timezone.utc) - timedelta(days=STALE_AFTER_DAYS)
     try:
-        last_time = repo.updated_at
-        return last_time < six_months_ago
-    except ValueError:
+        return repo.updated_at < cutoff
+    except (AttributeError, ValueError):
         return False
 
 
@@ -133,10 +147,9 @@ def fetch_res(res: str):
 
                 is_stale_check_required = res != LAST_UPDATED_KEY
                 if is_stale_check_required:
-                    # Use cached results if already computed and results are from 6+ months
-                    if cache[repo.name][res] != default_value and check_latest_update(
-                        repo
-                    ):
+                    # Reuse cached results when already computed and the repo has
+                    # gone untouched for at least STALE_AFTER_DAYS days
+                    if cache[repo.name][res] != default_value and is_stale(repo):
                         result[repo.name] = cache[repo.name][res]
                         continue
 

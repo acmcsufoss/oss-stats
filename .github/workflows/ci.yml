@@ -30,3 +30,6 @@ jobs:
 
       - name: Lint
         run: uv run ruff check
+
+      - name: Tests
+        run: uv run python tests/test_stale.py

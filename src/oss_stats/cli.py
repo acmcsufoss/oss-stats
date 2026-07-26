@@ -11,6 +11,8 @@ from .const import (
     STARS_KEY,
 )
 from .stats import (
+    STALE_AFTER_DAYS,
+    set_stale_after,
     fetch_commits,
     fetch_issues,
     fetch_prs,
@@ -110,8 +112,23 @@ def cli():
         #        nargs='+',
         choices=(RESOURCE_CHOICES + [ALL_KEY]),
     )
+    parser.add_argument(
+        "--stale-after",
+        metavar="DAYS",
+        type=int,
+        default=STALE_AFTER_DAYS,
+        help=(
+            "reuse cached stats for repos untouched for at least DAYS days "
+            f"(default: {STALE_AFTER_DAYS}); 0 forces a full refresh"
+        ),
+    )
 
     args = parser.parse_args()
+
+    try:
+        set_stale_after(args.stale_after)
+    except ValueError as e:
+        parser.error(str(e))
 
     actions = args.actions
     resources = args.resources
