@@ -5,6 +5,8 @@ from github import Github, GithubException
 from dotenv import find_dotenv, load_dotenv
 from datetime import datetime, timedelta, timezone
 from alive_progress import alive_bar
+from platformdirs import user_config_dir
+import tomllib
 from .error import error
 
 from github.Repository import Repository
@@ -23,7 +25,18 @@ from .cache import create_entry, load_cache, save_cache
 # A __file__-relative path resolved to src/.env, which never exists, and would
 # point into site-packages once the package is pip-installed.
 load_dotenv(find_dotenv(usecwd=True))
-token = os.getenv("GITHUB_TOKEN")
+
+config_path = f"{user_config_dir("oss-stats", appauthor=False)}/config.toml"
+print(config_path)
+config = None
+try:
+    with open(config_path, "rb") as f:
+        config = tomllib.load(f)
+except FileNotFoundError:
+    config = {}
+
+token = os.getenv("GITHUB_TOKEN") or config.get("github_token")
+
 
 if not token:
     error("The [code] GITHUB_TOKEN [/] environment variable is unset!")
