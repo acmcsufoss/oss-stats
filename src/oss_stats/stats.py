@@ -27,7 +27,6 @@ from .cache import create_entry, load_cache, save_cache
 load_dotenv(find_dotenv(usecwd=True))
 
 config_path = f"{user_config_dir("oss-stats", appauthor=False)}/config.toml"
-print(config_path)
 config = None
 try:
     with open(config_path, "rb") as f:
