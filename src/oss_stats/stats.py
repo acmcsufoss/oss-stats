@@ -26,7 +26,7 @@ from .cache import create_entry, load_cache, save_cache
 # point into site-packages once the package is pip-installed.
 load_dotenv(find_dotenv(usecwd=True))
 
-config_path = f"{user_config_dir("oss-stats", appauthor=False)}/config.toml"
+config_path = f"{user_config_dir('oss-stats', appauthor=False)}/config.toml"
 config = None
 try:
     with open(config_path, "rb") as f:
