@@ -28,13 +28,15 @@ from .cache import create_entry, load_cache, save_cache
 # point into site-packages once the package is pip-installed.
 load_dotenv(find_dotenv(usecwd=True))
 
-config_path = Path(user_config_dir('oss-stats', appauthor=False)) / "config.toml"
+config_path = Path(user_config_dir("oss-stats", appauthor=False)) / "config.toml"
 config = None
 try:
     with open(config_path, "rb") as f:
         config = tomllib.load(f)
 except FileNotFoundError:
-    Path(user_config_dir('oss-stats', appauthor=False)).mkdir(parents=True, exist_ok=True)
+    Path(user_config_dir("oss-stats", appauthor=False)).mkdir(
+        parents=True, exist_ok=True
+    )
     with open(config_path, "wb") as f:
         tomli_w.dump({"github_token": ""}, f)
     config = {}
@@ -43,7 +45,9 @@ token = os.getenv("GITHUB_TOKEN") or config.get("github_token")
 
 
 if not token:
-    error(f"The [code] GITHUB_TOKEN [/] environment variable or config variable [code] github_token [/] in \"{config_path}\" is unset!")
+    error(
+        f'The [code] GITHUB_TOKEN [/] environment variable or config variable [code] github_token [/] in "{config_path}" is unset!'
+    )
     sys.exit(1)
 
 gh = Github(token)
