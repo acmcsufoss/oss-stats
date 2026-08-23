@@ -20,6 +20,7 @@ dependencies = [
     "questionary>=2.1.0",
     "rich>=13.9.3",
     "platformdirs>=4.9.6",
+    "tomli-w>=1.2.0",
 ]
 
 [dependency-groups]
