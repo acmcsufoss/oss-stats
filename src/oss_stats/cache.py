@@ -16,16 +16,16 @@ Path.mkdir(cache_dir, parents=True, exist_ok=True)
 CACHE_FILE = f"{cache_dir}/stats.json"
 
 
-def load_cache():
+def load_cache(cachePath = CACHE_FILE):
     try:
-        with open(CACHE_FILE, "r") as f:
+        with open(cachePath, "r") as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         return {}
 
 
-def save_cache(cache):
-    with open(CACHE_FILE, "w") as f:
+def save_cache(cache, cachePath = CACHE_FILE):
+    with open(cachePath, "w") as f:
         json.dump(cache, f, indent=4)
 
 
