@@ -1,4 +1,4 @@
-from oss_stats.cache import load_cache, save_cache, create_entry
+from oss_stats.cache import create_entry
 import unittest
 
 from oss_stats.const import (
