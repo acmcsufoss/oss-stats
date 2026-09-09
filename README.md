@@ -64,8 +64,8 @@ Note: To build a distributable version of this app, use `uv build`.
 
    ```bash
    Windows: C:\Users\[user]\AppData\Local\oss-stats\config.toml
-   Mac: /Users/[user]/Library/Application Support/oss-stats/config.toml
-   Linux (Ubuntu/WSL): /root/.config/oss-stats/config.toml
+   Mac:     /Users/[user]/Library/Application Support/oss-stats/config.toml
+   Linux:   /home/[user]/.config/oss-stats/config.toml
    ```
 
    - Update `config.toml` with your Github token in the following format:
