@@ -44,10 +44,34 @@ Note: To build a distributable version of this app, use `uv build`.
 
 3. **Set up your GitHub token:**
 
+   ### Option 1
+
    - Create a `.env` file in the project root with the following content:
 
    ```bash
    GITHUB_TOKEN="your_github_token_here"
+   ```
+   
+   ### Option 2
+
+   - If you don't want to use the environment variable, run oss-stats for a first time.
+
+   ```bash
+   uv run oss-stats
+   ```
+
+   - This will generate a `config.toml` file in one of these directories depending on your operating system:
+
+   ```bash
+   Windows: C:\Users\[user]\AppData\Local\oss-stats\config.toml
+   Mac: /Users/[user]/Library/Application Support/oss-stats/config.toml
+   Linux (Ubuntu/WSL): /root/.config/oss-stats/config.toml
+   ```
+
+   - Update `config.toml` with your Github token in the following format:
+
+   ```bash
+   github_token = "ghp_..."
    ```
 
 4. **Run:**
