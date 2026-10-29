@@ -1,6 +1,7 @@
 from oss_stats.cache import create_entry
 import unittest
 
+
 from oss_stats.const import (
     COMMITS_KEY,
     CONTRIBUTORS_KEY,
@@ -11,10 +12,11 @@ from oss_stats.const import (
 )
 
 
-class TestCache(unittest.TestCase):
-    def test_createEntry(self):
-        testStats = {}
-        compare = {
+class TestCache(unittest.TestCase): #We create a class that inherits from unittest.TestCase
+    #the purpose of the test should be to generate a dummyRepo in testStats
+    def test_createEntry(self): #specific test cases
+        testStats = {} 
+        compare = { #we create an expected output to compare the testStats to (I just went through the codebase and looked at the function)
             "dummyRepo": {
                 COMMITS_KEY: -1,
                 ISSUES_KEY: -1,
@@ -24,8 +26,9 @@ class TestCache(unittest.TestCase):
                 LAST_UPDATED_KEY: "",
             }
         }
-        create_entry(stats=testStats, repo_name="dummyRepo")
-        self.assertEqual(testStats, compare)
+        create_entry(stats=testStats, repo_name="dummyRepo") #we now test the function with input of dummy_repo
+        self.assertEqual(testStats, compare) #set them equal to each other and assert if the test passes
+
 
 
 if __name__ == "__main__":
