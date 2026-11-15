@@ -58,7 +58,7 @@ def test_loadEntry():
     # we want to use try and except so we can fail if FileNotFoundError is incorrectly handled.
     try:
         load_cache("nonExistent.json")
-    except:
+    except Exception:
         pytest.fail(
             "Unhandled or incorrect exception. The exception to be handled should be 'FileNotFoundError.'"
         )
@@ -77,7 +77,7 @@ def test_loadEntry():
         testOutput = load_cache(
             TEST_DATA / "dummyBad.json"
         )  # load the real bad file; if the function lets JSONDecodeError escape, that raises error.
-    except:
+    except Exception:
         pytest.fail(
             "Unhandled or incorrect exception. The exception to be handled should be 'JSONDecodeError'"
         )

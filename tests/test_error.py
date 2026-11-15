@@ -17,5 +17,5 @@ def test_error():
     assert (
         "Bad error." in str_output
     ), (  # check to see if the capture contains the phrase "Bad Error"
-        f"The error 'Bad error' is not processed in the printed error output."
+        "The error 'Bad error' is not processed in the printed error output."
     )
