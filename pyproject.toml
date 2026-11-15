@@ -44,3 +44,7 @@ Issues = "https://github.com/acmcsufoss/oss-stats/issues"
 [tool.pytest.ini_options]
 # TODO: temporarily skip test_stats.py (it calls the real GitHub API on import)
 addopts = "--ignore=tests/test_stats.py"
+
+[tool.ruff.lint]
+# TODO: temporarily skip linting test_stats.py (along with skipping it in pytest above)
+exclude = ["tests/test_stats.py"]
