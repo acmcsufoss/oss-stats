@@ -5,6 +5,7 @@ token = os.getenv("GITHUB_TOKEN")
 gh = Github(token)
 repo = gh.get_organization("acmcsufoss").get_repo("oss-stats")
 
+
 def test_getCommits():
     # Test case 1: Valid repository with commits
     result = get_commits(repo)
@@ -22,5 +23,6 @@ def test_getCommits():
         inv_repo = gh.get_organization("acmcsufoss").get_repo("invalid_repo")
     except Exception as e:
         invalidDidntFind = type(e).__name__ == "UnknownObjectException"
-    assert invalidDidntFind, "Expected an exception for invalid repository name, but no exception was raised"
-    
+    assert invalidDidntFind, (
+        "Expected an exception for invalid repository name, but no exception was raised"
+    )
