@@ -31,5 +31,8 @@ jobs:
       - name: Lint
         run: uv run ruff check
 
-      - name: Tests
+      - name: Stale Tests
         run: uv run python tests/test_stale.py
+
+      - name: Unit Tests (Excluding Stats)
+        run: uv run pytest
